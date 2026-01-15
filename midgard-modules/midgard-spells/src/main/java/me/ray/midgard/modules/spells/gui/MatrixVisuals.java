@@ -73,7 +73,7 @@ public class MatrixVisuals {
 
                 if (isActive) {
                     lore.add("<green>✔ Ativo");
-                    item.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
+                    item.addUnsafeEnchantment(Enchantment.UNBREAKING, 1);
                     if (meta != null) meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
                 } else {
                     lore.add("<yellow>⚠ Inativo (Clique para ativar)");

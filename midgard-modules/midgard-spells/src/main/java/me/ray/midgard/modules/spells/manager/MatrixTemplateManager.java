@@ -31,6 +31,10 @@ public class MatrixTemplateManager {
     public MatrixTemplate getTemplate(String id) {
         return templates.get(id);
     }
+    
+    public Collection<String> getTemplateIds() {
+        return java.util.Collections.unmodifiableSet(templates.keySet());
+    }
 
     public void loadTemplates() {
         templates.clear();

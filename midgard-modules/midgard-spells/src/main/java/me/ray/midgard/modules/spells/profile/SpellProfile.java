@@ -19,12 +19,13 @@ public class SpellProfile {
     
     // Combo System
     public enum CastingStyle {
-        SPELL_BAR,
+        SKILLBAR,
         COMBO
     }
     
-    private CastingStyle castingStyle = CastingStyle.SPELL_BAR;
+    private CastingStyle castingStyle = CastingStyle.SKILLBAR;
     private final Map<String, String> comboBindings = new HashMap<>();
+    private final Map<Integer, ComboBinding> comboSlots = new HashMap<>(); // Slot -> Binding
     
     public SpellProfile(UUID playerId) {
         this.playerId = playerId;
@@ -50,6 +51,45 @@ public class SpellProfile {
         comboBindings.put(combo, spellId);
     }
     
+    public void setComboLegacy(String combo, String spellId) {
+        setComboBinding(combo, spellId);
+    }
+    
+    public void setSkillBarSlot(int slot, String spellId) {
+        if (spellId == null) {
+            skillBar.remove(slot);
+        } else {
+            skillBar.put(slot, spellId);
+        }
+    }
+    
+    public ComboBinding getComboSlot(int slot) {
+        return comboSlots.get(slot);
+    }
+    
+    public void setComboSlot(int slot, String sequence, String spellId) {
+        if (spellId == null || sequence == null) {
+            comboSlots.remove(slot);
+             // Also remove from bindings map if needed, but complex logic might be needed
+        } else {
+            ComboBinding binding = new ComboBinding(sequence, spellId);
+            comboSlots.put(slot, binding);
+            comboBindings.put(sequence, spellId);
+        }
+    }
+    
+    public static class ComboBinding {
+        private final String sequence;
+        private final String spellId;
+        
+        public ComboBinding(String sequence, String spellId) {
+            this.sequence = sequence;
+            this.spellId = spellId;
+        }
+        
+        public String getSequence() { return sequence; }
+        public String getSpellId() { return spellId; }
+    }    
     public MatrixState getMatrixState(String spellId) {
         return spellStates.computeIfAbsent(spellId, MatrixState::new);
     }

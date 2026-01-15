@@ -3,7 +3,6 @@ package me.ray.midgard.modules.spells.command;
 import me.ray.midgard.core.command.MidgardCommand;
 import me.ray.midgard.core.text.MessageUtils;
 import me.ray.midgard.modules.spells.SpellsModule;
-import me.ray.midgard.modules.spells.gui.editor.MatrixEditorMenu;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.util.StringUtil;
@@ -84,8 +83,9 @@ public class TemplateCommand extends MidgardCommand {
                     MessageUtils.send(player, module.getMessage("command.usage"));
                     return;
                 }
-                String id = args[1];
-                new MatrixEditorMenu(player, module, id).open();
+                // String id = args[1];
+                // new MatrixEditorMenu(player, module, id).open();
+                MessageUtils.send(player, "<red>Editor temporariamente desativado para refatoração.");
                 break;
                 
             case "list":

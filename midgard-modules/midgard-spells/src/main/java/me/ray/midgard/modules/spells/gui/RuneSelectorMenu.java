@@ -40,7 +40,27 @@ public class RuneSelectorMenu extends PaginatedGui<SpellRune> {
     }
 
     @Override
-    public void onItemClick(SpellRune rune) {
+    public void onItemClick(Player player, int slot) {
+        int row = slot / 9;
+        int col = slot % 9;
+
+        // Validar área de conteúdo (linhas 1-3, colunas 1-7)
+        if (row < 1 || row > 3 || col < 1 || col > 7) return;
+
+        int indexOnPage = (row - 1) * 7 + (col - 1);
+        int globalIndex = (page * maxItemsPerPage) + indexOnPage;
+
+        if (globalIndex >= 0 && globalIndex < items.size()) {
+            SpellRune rune = items.get(globalIndex);
+            handleRuneSelection(player, rune);
+        }
+    }
+
+    private void handleRuneSelection(Player player, SpellRune rune) {
+        // Implementação original
         // ...
+        MessageUtils.send(player, "<green>Selected rune: " + rune.getId());
+        player.closeInventory();
+        // TODO: Apply rune logic
     }
 }
