@@ -3,7 +3,7 @@ package me.ray.midgard.modules.spells.command;
 import me.ray.midgard.core.MidgardCore; // Added import
 import me.ray.midgard.core.command.MidgardCommand;
 import me.ray.midgard.modules.spells.SpellsModule;
-import me.ray.midgard.modules.spells.data.SpellProfile;
+import me.ray.midgard.modules.spells.profile.SpellProfile;
 import me.ray.midgard.modules.spells.gui.MainSpellGUI;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

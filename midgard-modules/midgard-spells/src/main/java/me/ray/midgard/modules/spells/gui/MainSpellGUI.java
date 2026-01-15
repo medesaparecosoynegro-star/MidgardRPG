@@ -6,7 +6,7 @@ import me.ray.midgard.core.gui.VisualState;
 import me.ray.midgard.core.text.MessageUtils;
 import me.ray.midgard.core.utils.ItemBuilder;
 import me.ray.midgard.modules.spells.SpellsModule;
-import me.ray.midgard.modules.spells.data.SpellProfile;
+import me.ray.midgard.modules.spells.profile.SpellProfile;
 import me.ray.midgard.modules.spells.obj.Spell;
 import org.bukkit.Material;
 import org.bukkit.Sound;

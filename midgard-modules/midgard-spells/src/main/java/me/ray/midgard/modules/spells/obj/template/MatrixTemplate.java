@@ -2,7 +2,7 @@ package me.ray.midgard.modules.spells.obj.template;
 
 import me.ray.midgard.modules.spells.obj.NodeType;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,8 +11,8 @@ public class MatrixTemplate {
 
     private final String id;
     private final String displayName;
-    // Slot -> Template Node Data
-    private final Map<Integer, TemplateNode> nodes = new HashMap<>();
+    // Slot -> Node
+    private final Map<Integer, MatrixNode> nodes = new HashMap<>();
 
     public MatrixTemplate(String id, String displayName) {
         this.id = id;
@@ -27,69 +27,47 @@ public class MatrixTemplate {
         return displayName;
     }
 
-    public Map<Integer, TemplateNode> getNodes() {
-        return nodes;
+    public Map<Integer, MatrixNode> getNodes() {
+        return Collections.unmodifiableMap(nodes);
     }
 
-    public void addNode(int slot, TemplateNode node) {
+    public void addNode(int slot, MatrixNode node) {
         nodes.put(slot, node);
     }
     
-    public TemplateNode getNode(int slot) {
+    public MatrixNode getNode(int slot) {
         return nodes.get(slot);
     }
 
-    public static class TemplateNode {
-        private NodeType type;
+    public static class MatrixNode {
+        private final NodeType type;
         private final int slot;
-        private List<Integer> parents = new ArrayList<>();
-        private String extraData; // Stores mutation ID or skill name
+        private final List<Integer> parents;
         
-        // Default visual properties (can be overridden by spell)
-        private String defaultIcon;
-        private String defaultName;
+        // Dados de Mutação
+        private final String mutationSkill; // O antigo mutationId
+        
+        // Dados Visuais
+        private final String displayName;
+        private final String iconMaterial;
+        private final int customModelData;
 
-        public TemplateNode(NodeType type, int slot) {
+        public MatrixNode(NodeType type, int slot, List<Integer> parents, String mutationSkill, String displayName, String iconMaterial, int customModelData) {
             this.type = type;
             this.slot = slot;
-            this.defaultIcon = (type == NodeType.SOCKET) ? "IRON_NUGGET" : "BOOK"; 
-            this.defaultName = (type == NodeType.SOCKET) ? "Socket" : "Talent";
+            this.parents = parents != null ? parents : Collections.emptyList();
+            this.mutationSkill = mutationSkill;
+            this.displayName = displayName;
+            this.iconMaterial = iconMaterial;
+            this.customModelData = customModelData;
         }
 
-        public NodeType getType() {
-            return type;
-        }
-
-        public void setType(NodeType type) {
-            this.type = type;
-        }
-
-        public int getSlot() {
-            return slot;
-        }
-
-        public List<Integer> getParents() {
-            return parents;
-        }
-        
-        public void setParents(List<Integer> parents) {
-            this.parents = parents;
-        }
-        
-        public String getDefaultIcon() {
-            return defaultIcon;
-        }
-        
-        public String getDefaultName() {
-            return defaultName;
-        }
-
-        public String getExtraData() {
-            return extraData;
-        }
-
-        public void setExtraData(String extraData) {
-            this.extraData = extraData;
-        }
+        public NodeType getType() { return type; }
+        public int getSlot() { return slot; }
+        public List<Integer> getParents() { return parents; }
+        public String getMutationSkill() { return mutationSkill; }
+        public String getDisplayName() { return displayName; }
+        public String getIconMaterial() { return iconMaterial; }
+        public int getCustomModelData() { return customModelData; }
     }
 }

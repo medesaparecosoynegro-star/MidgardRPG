@@ -14,10 +14,10 @@ public class Spell {
     private final double manaCost;
     private final double staminaCost;
     
-    // Matriz de Habilidade (Layout)
-    private final Map<Integer, SpellNode> matrixLayout;
+    // Referência ao Template de Progressão (Matrix)
+    private final String matrixTemplateId;
 
-    public Spell(String id, String mythicSkillName, String displayName, List<String> lore, double cooldown, double manaCost, double staminaCost, Map<Integer, SpellNode> matrixLayout) {
+    public Spell(String id, String mythicSkillName, String displayName, List<String> lore, double cooldown, double manaCost, double staminaCost, String matrixTemplateId) {
         this.id = id;
         this.mythicSkillName = mythicSkillName;
         this.displayName = displayName;
@@ -25,12 +25,11 @@ public class Spell {
         this.cooldown = cooldown;
         this.manaCost = manaCost;
         this.staminaCost = staminaCost;
-        this.matrixLayout = matrixLayout != null ? matrixLayout : Collections.emptyMap();
+        this.matrixTemplateId = matrixTemplateId;
     }
     
-    // Construtor legado para compatibilidade temporária
-    public Spell(String id, String mythicSkillName, String displayName, List<String> lore, double cooldown, double manaCost, double staminaCost) {
-        this(id, mythicSkillName, displayName, lore, cooldown, manaCost, staminaCost, Collections.emptyMap());
+    public String getMatrixTemplateId() {
+        return matrixTemplateId;
     }
 
     public String getId() {
@@ -49,9 +48,6 @@ public class Spell {
         return lore;
     }
 
-    public Map<Integer, SpellNode> getLayout() {
-        return matrixLayout;
-    }
 
     public double getCooldown() {
         return cooldown;
@@ -63,13 +59,5 @@ public class Spell {
 
     public double getStaminaCost() {
         return staminaCost;
-    }
-    
-    public Map<Integer, SpellNode> getMatrixLayout() {
-        return matrixLayout;
-    }
-    
-    public SpellNode getNode(int slot) {
-        return matrixLayout.get(slot);
     }
 }

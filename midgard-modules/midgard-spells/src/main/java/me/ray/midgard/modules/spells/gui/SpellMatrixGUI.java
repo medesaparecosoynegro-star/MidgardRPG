@@ -6,12 +6,13 @@ import me.ray.midgard.core.gui.VisualState;
 import me.ray.midgard.core.text.MessageUtils;
 import me.ray.midgard.core.utils.ItemBuilder;
 import me.ray.midgard.modules.spells.SpellsModule;
-import me.ray.midgard.modules.spells.data.MatrixState;
-import me.ray.midgard.modules.spells.data.SpellProfile;
+import me.ray.midgard.modules.spells.profile.MatrixState;
+import me.ray.midgard.modules.spells.profile.SpellProfile;
 import me.ray.midgard.modules.spells.manager.SpellManager;
 import me.ray.midgard.modules.spells.obj.NodeType;
 import me.ray.midgard.modules.spells.obj.Spell;
-import me.ray.midgard.modules.spells.obj.SpellNode;
+import me.ray.midgard.modules.spells.obj.template.MatrixTemplate;
+import me.ray.midgard.modules.spells.obj.template.MatrixTemplate.MatrixNode;
 import me.ray.midgard.modules.spells.obj.SpellRune;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -30,6 +31,7 @@ import java.util.Map;
 public class SpellMatrixGUI extends BaseGui {
 
     private final Spell spell;
+    private final MatrixTemplate template;
     private final SpellManager manager;
     private final SpellsModule module;
     private final MatrixState matrixState;
@@ -47,6 +49,14 @@ public class SpellMatrixGUI extends BaseGui {
         this.manager = module.getSpellManager();
         this.spell = manager.getSpell(spellId);
         
+        // Load Template
+        String templateId = spell.getMatrixTemplateId();
+        if (templateId != null) {
+            this.template = module.getTemplateManager().getTemplate(templateId);
+        } else {
+            this.template = null;
+        }
+        
         SpellProfile profile = manager.getProfile(player);
         this.matrixState = profile.getMatrixState(spellId);
     }
@@ -59,10 +69,16 @@ public class SpellMatrixGUI extends BaseGui {
             inventory.setItem(i, filler);
         }
         
+        if (template == null) {
+            inventory.setItem(22, GuiUtils.createStateIndicator(VisualState.ERROR, "Error", "No Matrix Template found for this spell."));
+            addControlButtons();
+            return;
+        }
+        
         // Renderizar nós da matrix
-        for (Map.Entry<Integer, SpellNode> entry : spell.getMatrixLayout().entrySet()) {
+        for (Map.Entry<Integer, MatrixNode> entry : template.getNodes().entrySet()) {
             int slot = entry.getKey();
-            SpellNode node = entry.getValue();
+            MatrixNode node = entry.getValue();
             
             if (!isNodeUnlocked(node)) {
                 renderLockedNode(slot, node);
@@ -124,12 +140,12 @@ public class SpellMatrixGUI extends BaseGui {
      * - Não tem pais (nó órfão), ou
      * - Pelo menos um dos pais está ativo
      */
-    private boolean isNodeUnlocked(SpellNode node) {
+    private boolean isNodeUnlocked(MatrixNode node) {
         if (node.getType() == NodeType.ROOT) return true;
-        if (node.getParentSlots().isEmpty()) return true;
+        if (node.getParents().isEmpty()) return true;
         
-        for (int parentSlot : node.getParentSlots()) {
-             SpellNode parent = spell.getNode(parentSlot);
+        for (int parentSlot : node.getParents()) {
+             MatrixNode parent = template.getNode(parentSlot);
              if (parent == null) continue;
              
              if (parent.getType() == NodeType.ROOT) return true;
@@ -144,7 +160,7 @@ public class SpellMatrixGUI extends BaseGui {
     /**
      * Renderiza um nó bloqueado.
      */
-    private void renderLockedNode(int slot, SpellNode node) {
+    private void renderLockedNode(int slot, MatrixNode node) {
         List<String> lore = module.getMessageList("matrix_gui.nodes.locked.lore");
         ItemStack locked = GuiUtils.createStateIndicator(
             VisualState.LOCKED,
@@ -157,7 +173,7 @@ public class SpellMatrixGUI extends BaseGui {
     /**
      * Renderiza um nó de mutação.
      */
-    private void renderMutation(int slot, SpellNode node) {
+    private void renderMutation(int slot, MatrixNode node) {
         boolean isRoot = node.getType() == NodeType.ROOT;
         boolean isActive = matrixState.getActiveMutations().contains(slot) || isRoot;
         
@@ -199,7 +215,7 @@ public class SpellMatrixGUI extends BaseGui {
     /**
      * Renderiza um socket (engaste de runa).
      */
-    private void renderSocket(int slot, SpellNode node) {
+    private void renderSocket(int slot, MatrixNode node) {
         String runeId = matrixState.getRune(slot);
         
         if (runeId != null) {
@@ -257,7 +273,7 @@ public class SpellMatrixGUI extends BaseGui {
     /**
      * Renderiza um conector (nó visual de caminho).
      */
-    private void renderConnector(int slot, SpellNode node) {
+    private void renderConnector(int slot, MatrixNode node) {
         ItemStack connector = new ItemBuilder(Material.WHITE_STAINED_GLASS_PANE)
             .setName(module.getMessage("matrix_gui.nodes.connector.name"))
             .customModelData(node.getCustomModelData())
@@ -296,7 +312,8 @@ public class SpellMatrixGUI extends BaseGui {
         }
         
         // Cliques em nós da matrix
-        SpellNode node = spell.getNode(slot);
+        if (template == null) return;
+        MatrixNode node = template.getNode(slot);
         if (node == null) return;
         
         if (!isNodeUnlocked(node)) {
@@ -323,7 +340,7 @@ public class SpellMatrixGUI extends BaseGui {
     /**
      * Trata clique em mutação - ativa ou desativa.
      */
-    private void handleMutationClick(int slot, SpellNode node) {
+    private void handleMutationClick(int slot, MatrixNode node) {
         if (matrixState.getActiveMutations().contains(slot)) {
             matrixState.deactivateMutation(slot);
             MessageUtils.send(player, module.getMessage("matrix_gui.messages.mutation_deactivated")
@@ -342,13 +359,15 @@ public class SpellMatrixGUI extends BaseGui {
      * Trata reset completo da matrix.
      */
     private void handleReset() {
+        if (template == null) return;
+        
         // Desativar todas as mutações
         for (int mutationSlot : new ArrayList<>(matrixState.getActiveMutations())) {
             matrixState.deactivateMutation(mutationSlot);
         }
         
         // Remover todas as runas (devolver ao inventário)
-        for (Map.Entry<Integer, SpellNode> entry : spell.getMatrixLayout().entrySet()) {
+        for (Map.Entry<Integer, MatrixNode> entry : template.getNodes().entrySet()) {
             if (entry.getValue().getType() == NodeType.SOCKET) {
                 String runeId = matrixState.getRune(entry.getKey());
                 if (runeId != null) {
@@ -375,7 +394,7 @@ public class SpellMatrixGUI extends BaseGui {
     /**
      * Trata clique em socket - remove ou equipa runa.
      */
-    private void handleSocketClick(InventoryClickEvent event, int slot, SpellNode node) {
+    private void handleSocketClick(InventoryClickEvent event, int slot, MatrixNode node) {
         String existingRune = matrixState.getRune(slot);
         ItemStack cursor = event.getCursor();
         

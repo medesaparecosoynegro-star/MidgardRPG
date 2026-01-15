@@ -5,8 +5,8 @@ import io.lumine.mythic.api.config.MythicLineConfig;
 import io.lumine.mythic.api.skills.conditions.IEntityCondition;
 import io.lumine.mythic.bukkit.BukkitAdapter;
 import me.ray.midgard.modules.spells.SpellsModule;
-import me.ray.midgard.modules.spells.data.MatrixState;
-import me.ray.midgard.modules.spells.data.SpellProfile;
+import me.ray.midgard.modules.spells.profile.MatrixState;
+import me.ray.midgard.modules.spells.profile.SpellProfile;
 import org.bukkit.entity.Player;
 
 public class MatrixCondition implements IEntityCondition {

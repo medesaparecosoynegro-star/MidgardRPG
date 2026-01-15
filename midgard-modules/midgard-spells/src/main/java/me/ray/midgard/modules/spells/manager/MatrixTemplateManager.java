@@ -3,7 +3,7 @@ package me.ray.midgard.modules.spells.manager;
 import me.ray.midgard.modules.spells.SpellsModule;
 import me.ray.midgard.modules.spells.obj.NodeType;
 import me.ray.midgard.modules.spells.obj.template.MatrixTemplate;
-import me.ray.midgard.modules.spells.obj.template.MatrixTemplate.TemplateNode;
+import me.ray.midgard.modules.spells.obj.template.MatrixTemplate.MatrixNode;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
 
 public class MatrixTemplateManager {
 
@@ -25,6 +26,10 @@ public class MatrixTemplateManager {
         if (!templateFolder.exists()) {
             templateFolder.mkdirs();
         }
+    }
+    
+    public MatrixTemplate getTemplate(String id) {
+        return templates.get(id);
     }
 
     public void loadTemplates() {
@@ -46,10 +51,15 @@ public class MatrixTemplateManager {
                     try {
                         int slot = nodeSec.getInt("slot");
                         NodeType type = NodeType.valueOf(nodeSec.getString("type", "PASSIVE"));
+                        List<Integer> parents = nodeSec.getIntegerList("parents");
+                        String mutationSkill = nodeSec.getString("mutation-id");
                         
-                        TemplateNode node = new TemplateNode(type, slot);
-                        node.setParents(nodeSec.getIntegerList("parents"));
-                        node.setExtraData(nodeSec.getString("mutation-id"));
+                        // Visuals
+                        String display = nodeSec.getString("display-name");
+                        String icon = nodeSec.getString("icon");
+                        int model = nodeSec.getInt("model-data");
+                        
+                        MatrixNode node = new MatrixNode(type, slot, parents, mutationSkill, display, icon, model);
                         template.addNode(slot, node);
                     } catch (Exception e) {
                         module.getPlugin().getLogger().warning("Error loading template node " + key + " in " + id);
@@ -67,29 +77,23 @@ public class MatrixTemplateManager {
         
         config.set("name", template.getDisplayName());
         
-        for (TemplateNode node : template.getNodes().values()) {
+        for (MatrixNode node : template.getNodes().values()) {
             String key = "node_" + node.getSlot();
             config.set("nodes." + key + ".slot", node.getSlot());
             config.set("nodes." + key + ".type", node.getType().name());
             config.set("nodes." + key + ".parents", node.getParents());
-            if (node.getExtraData() != null) {
-                config.set("nodes." + key + ".mutation-id", node.getExtraData());
+            if (node.getMutationSkill() != null) {
+                config.set("nodes." + key + ".mutation-id", node.getMutationSkill());
             }
+            if (node.getDisplayName() != null) config.set("nodes." + key + ".display-name", node.getDisplayName());
+            if (node.getIconMaterial() != null) config.set("nodes." + key + ".icon", node.getIconMaterial());
+            config.set("nodes." + key + ".model-data", node.getCustomModelData());
         }
         
         try {
             config.save(file);
-            templates.put(template.getId(), template);
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    
-    public MatrixTemplate getTemplate(String id) {
-        return templates.get(id);
-    }
-    
-    public Collection<String> getTemplateIds() {
-        return templates.keySet();
     }
 }

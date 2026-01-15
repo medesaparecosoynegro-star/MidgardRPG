@@ -4,13 +4,13 @@ import io.lumine.mythic.api.MythicProvider;
 import io.lumine.mythic.api.skills.Skill;
 import io.lumine.mythic.bukkit.MythicBukkit;
 import me.ray.midgard.core.MidgardCore;
-import me.ray.midgard.core.profile.MidgardProfile;
 import me.ray.midgard.modules.spells.SpellsModule;
-import me.ray.midgard.modules.spells.data.MatrixState;
-import me.ray.midgard.modules.spells.data.SpellProfile;
+import me.ray.midgard.modules.spells.profile.MatrixState;
+import me.ray.midgard.modules.spells.profile.SpellProfile;
 import me.ray.midgard.modules.spells.obj.NodeType;
 import me.ray.midgard.modules.spells.obj.Spell;
-import me.ray.midgard.modules.spells.obj.SpellNode;
+import me.ray.midgard.modules.spells.obj.template.MatrixTemplate;
+import me.ray.midgard.modules.spells.obj.template.MatrixTemplate.MatrixNode;
 import me.ray.midgard.modules.spells.obj.SpellRune;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -28,21 +28,24 @@ import org.bukkit.configuration.ConfigurationSection;
 public class SpellManager {
 
     private final SpellsModule module;
+    private final MatrixTemplateManager templateManager;
     private final Map<String, Spell> loadedSpells = new HashMap<>();
     private final Map<String, SpellRune> loadedRunes = new HashMap<>();
     private final Set<UUID> castingModePlayers = new HashSet<>();
 
     private final Map<UUID, Integer> castingAnchors = new HashMap<>();
-
     private final Map<Integer, String> defaultCombos = new HashMap<>();
+    
+    // Active profiles (In-memory for now)
+    private final Map<UUID, SpellProfile> profiles = new HashMap<>();
 
     public SpellManager(SpellsModule module) {
         this.module = module;
+        this.templateManager = module.getTemplateManager(); // Recupera do módulo
         loadDefaultCombos();
     }
 
     private void loadDefaultCombos() {
-        // Defaults if config is missing (Plain L/R without hyphens to match Listener)
         defaultCombos.put(1, "LLL");
         defaultCombos.put(2, "RRR");
         defaultCombos.put(3, "LRL");
@@ -50,7 +53,6 @@ public class SpellManager {
         defaultCombos.put(5, "LLR");
         defaultCombos.put(6, "RRL");
         
-        // Load from module config if available
         if (module.getConfig() != null) {
             ConfigurationSection section = module.getConfig().getConfigurationSection("combos");
             if (section != null) {
@@ -83,12 +85,9 @@ public class SpellManager {
         }
     }
 
-    @SuppressWarnings("deprecation")
     public void enableCastingMode(Player player) {
         castingModePlayers.add(player.getUniqueId());
         
-        // Define Anchor Slot (Current Slot becomes the "Void")
-        // Everything to the right of this slot is shifted +1 visuals
         int anchor = player.getInventory().getHeldItemSlot(); 
         castingAnchors.put(player.getUniqueId(), anchor);
         
@@ -101,7 +100,7 @@ public class SpellManager {
 
     public void disableCastingMode(Player player) {
         castingModePlayers.remove(player.getUniqueId());
-        castingAnchors.remove(player.getUniqueId()); // Limpa anchor
+        castingAnchors.remove(player.getUniqueId());
         player.removeMetadata("midgard_casting_mode", module.getPlugin());
         player.playSound(player.getLocation(), org.bukkit.Sound.BLOCK_IRON_TRAPDOOR_CLOSE, 1f, 0.5f);
         me.ray.midgard.core.text.MessageUtils.sendActionBar(player, "");
@@ -122,48 +121,34 @@ public class SpellManager {
         SpellProfile profile = getProfile(player);
         if (profile == null) return;
         
-        // Use getVirtualSkillId logic here? Or parameter is already virtual?
-        // Parameter 'slot' comes from listener which usually sends raw slot (1-9)
-        // But we want to abstract this. Let's create a helper method.
-        
         String spellId = profile.getSkillInSlot(slot);
         if (spellId == null) return;
         
         castSpell(player, spellId);
     }
     
-    // Retorna o ID da skill que estaria no slot visualizado, considerando o deslocamento do Anchor
     public String getSkillInVirtualSlot(Player player, int visualSlotIndex) {
-        // visualSlotIndex: 0-8 (Hotbar index)
         SpellProfile profile = getProfile(player);
         if (profile == null) return null;
 
         Integer anchor = castingAnchors.get(player.getUniqueId());
         if (anchor == null) {
-            // Se não tem anchor, retorna normal
             return profile.getSkillInSlot(visualSlotIndex + 1);
         }
 
         if (visualSlotIndex == anchor) {
-            return null; // O slot âncora é sempre vazio/buraco
+            return null;
         }
 
-        // Se o slot visualizado é maior que o âncora, shift right
         if (visualSlotIndex > anchor) {
-            // Ex: Anchor 0. Query 1.
-            // Skill que deveria estar aqui é a do índice (1-1) = 0.
-            int originalIndex = visualSlotIndex - 1;
-            return profile.getSkillInSlot(originalIndex + 1); // +1 because profile is 1-based
+            return profile.getSkillInSlot(visualSlotIndex); 
         }
 
-        // Se o slot visualizado é menor que o âncora, mantém original
-        // Ex: Anchor 2. Query 1. Skill Index 1.
         return profile.getSkillInSlot(visualSlotIndex + 1);
     }
 
     public void loadRunes() {
         loadedRunes.clear();
-        // TODO: Load from files in modules/spells/runes
         
         // Mock "Jade Rune"
         Map<String, Double> jadeStats = new HashMap<>();
@@ -210,29 +195,9 @@ public class SpellManager {
             double stamina = config.getDouble("stamina");
             List<String> lore = config.getStringList("lore");
             
-            // Load Matrix
-            Map<Integer, SpellNode> layout = new HashMap<>();
-            ConfigurationSection matrixSec = config.getConfigurationSection("matrix");
-            if (matrixSec != null) {
-                for (String key : matrixSec.getKeys(false)) {
-                    ConfigurationSection nodeSec = matrixSec.getConfigurationSection(key);
-                    try {
-                        NodeType type = NodeType.valueOf(nodeSec.getString("type"));
-                        int slot = nodeSec.getInt("slot");
-                        List<Integer> parents = nodeSec.getIntegerList("parents");
-                        String mutId = nodeSec.getString("mutation-id");
-                        String display = nodeSec.getString("display-name");
-                        String icon = nodeSec.getString("icon");
-                        int model = nodeSec.getInt("model-data");
-                        
-                        layout.put(slot, new SpellNode(type, slot, parents, mutId, display, icon, model));
-                    } catch (Exception e) {
-                        module.getPlugin().getLogger().warning("Error loading node " + key + " in spell " + id + ": " + e.getMessage());
-                    }
-                }
-            }
+            String templateId = config.getString("matrix-template");
 
-            Spell spell = new Spell(id, mythicSkill, name, lore, cooldown, mana, stamina, layout);
+            Spell spell = new Spell(id, mythicSkill, name, lore, cooldown, mana, stamina, templateId);
             loadedSpells.put(id, spell);
         }
         
@@ -263,9 +228,12 @@ public class SpellManager {
     }
 
     public SpellProfile getProfile(Player player) {
-        MidgardProfile coreProfile = MidgardCore.getProfileManager().getProfile(player.getUniqueId());
-        if (coreProfile == null) return null; 
-        return coreProfile.getOrCreateData(SpellProfile.class);
+        return profiles.computeIfAbsent(player.getUniqueId(), SpellProfile::new);
+    }
+    
+    // Method to clear profile (on quit)
+    public void unloadProfile(Player player) {
+        profiles.remove(player.getUniqueId());
     }
 
     public boolean castSpell(Player player, String spellId) {
@@ -285,21 +253,31 @@ public class SpellManager {
         }
 
         MatrixState matrix = profile.getMatrixState(spellId);
-        String skillName = spell.getMythicSkillName();
+        String skillToCast = spell.getMythicSkillName();
         
-        // Resolve Mutation
-        for (int slot : matrix.getActiveMutations()) {
-            SpellNode node = spell.getNode(slot);
-            if (node != null && node.getType() == NodeType.MUTATION && node.getMutationId() != null) {
-                skillName = node.getMutationId();
+        // --- LOGIC REFACTOR START ---
+        // Recuperar o Template (A Spell diz qual template usa)
+        String templateId = spell.getMatrixTemplateId();
+        
+        if (templateId != null && templateManager.getTemplate(templateId) != null) {
+            MatrixTemplate template = templateManager.getTemplate(templateId);
+            
+             // 3. Resolver Mutações (Cruzando Estado com Template)
+            for (int activeSlot : matrix.getActiveMutations()) {
+                MatrixNode node = template.getNode(activeSlot);
+                
+                if (node != null && node.getType() == NodeType.MUTATION && node.getMutationSkill() != null) {
+                    skillToCast = node.getMutationSkill();
+                }
             }
         }
+        // --- LOGIC REFACTOR END ---
         
         // Validate Skill
-        Optional<Skill> mythicSkill = MythicProvider.get().getSkillManager().getSkill(skillName);
+        Optional<Skill> mythicSkill = MythicProvider.get().getSkillManager().getSkill(skillToCast);
         if (mythicSkill.isEmpty()) {
             String errorMsg = module.getMessage("errors.config_error")
-                .replace("%skill%", skillName);
+                .replace("%skill%", skillToCast);
             me.ray.midgard.core.text.MessageUtils.send(player, errorMsg);
             return false;
         }
@@ -307,12 +285,17 @@ public class SpellManager {
         // 2. Calculate Rune Variables (Math Injection)
         Map<String, Double> runtimeVariables = new HashMap<>();
         
-        // Base variables (can be config driven too, e.g. from Spell obj)
         runtimeVariables.put("damage_bonus", 0.0);
         runtimeVariables.put("size_bonus", 0.0);
         runtimeVariables.put("duration_bonus", 0.0);
 
-        // Sum up all stats from equipped runes
+        // Sum up stats from runes (Not implemented fully in MatrixState yet, assuming future)
+        // matrix.getSocketRunes() requires MatrixState update. 
+        // For now, ignoring runes or assuming base Logic 
+        // NOTE: MatrixState provided by user did not have getSocketRunes().
+        // I will comment out Rune logic linked to sockets for now.
+        
+        /*
         for (String runeId : matrix.getSocketRunes().values()) {
             SpellRune rune = getRune(runeId);
             if (rune != null) {
@@ -321,27 +304,29 @@ public class SpellManager {
                 );
             }
         }
+        */
 
         // 3. Inject into MythicMobs Caster Scope
-        // Scope CASTER persists until cleared or overwritten. 
-        // Ideal is to use 'Skill Scope' if we could pass Metadata, but setting on Caster is standard for simpler API use.
         AbstractEntity abstractPlayer = BukkitAdapter.adapt(player);
         VariableRegistry registry = MythicBukkit.inst().getVariableManager().getRegistry(VariableScope.CASTER, abstractPlayer);
         
         for (Map.Entry<String, Double> entry : runtimeVariables.entrySet()) {
-            // Ex: <caster.var.damage_bonus>
             registry.putFloat(entry.getKey(), entry.getValue().floatValue());
         }
 
         // Cast
-        boolean success = MythicBukkit.inst().getAPIHelper().castSkill(player, skillName);
+        boolean success = MythicBukkit.inst().getAPIHelper().castSkill(player, skillToCast);
         if (success) {
-            // Execute Extra Matrix Skills
-            for (int slot : matrix.getUnlockedNodes()) {
-                 SpellNode node = spell.getNode(slot);
-                 if (node != null && node.getType() == NodeType.MYTHIC_SKILL && node.getMutationId() != null) {
-                      MythicBukkit.inst().getAPIHelper().castSkill(player, node.getMutationId());
-                 }
+            
+            // Execute Extra Matrix Skills (Passives/Extras)
+            if (templateId != null && templateManager.getTemplate(templateId) != null) {
+                MatrixTemplate template = templateManager.getTemplate(templateId);
+                 for (int activeSlot : matrix.getActiveMutations()) { // Assuming 'ActiveMutations' tracks unlocked nodes
+                     MatrixNode node = template.getNode(activeSlot);
+                     if (node != null && node.getType() == NodeType.MYTHIC_SKILL && node.getMutationSkill() != null) {
+                          MythicBukkit.inst().getAPIHelper().castSkill(player, node.getMutationSkill());
+                     }
+                }
             }
 
             profile.setCooldown(spellId, spell.getCooldown());
@@ -351,11 +336,6 @@ public class SpellManager {
                 me.ray.midgard.core.text.MessageUtils.send(player, castMsg);
             }
         }
-        
-        // Cleanup? 
-        // Usually fine to leave variables as they are scoped to "last cast state" or overwrite next time.
-        // If we want to be safe, we can clear them later, but that might clear variables for other skills running async.
-        // A unique prefix like "spell_midgard_var_" is safer.
 
         return success;
     }

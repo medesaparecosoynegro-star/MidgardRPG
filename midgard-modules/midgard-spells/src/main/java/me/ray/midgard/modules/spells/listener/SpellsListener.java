@@ -2,7 +2,7 @@ package me.ray.midgard.modules.spells.listener;
 
 import me.ray.midgard.core.text.MessageUtils;
 import me.ray.midgard.modules.spells.SpellsModule;
-import me.ray.midgard.modules.spells.data.SpellProfile;
+import me.ray.midgard.modules.spells.profile.SpellProfile;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;

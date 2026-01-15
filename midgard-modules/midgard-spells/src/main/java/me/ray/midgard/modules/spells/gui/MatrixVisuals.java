@@ -2,7 +2,7 @@ package me.ray.midgard.modules.spells.gui;
 
 import me.ray.midgard.core.text.MessageUtils;
 import me.ray.midgard.modules.spells.obj.NodeType;
-import me.ray.midgard.modules.spells.obj.SpellNode;
+import me.ray.midgard.modules.spells.obj.template.MatrixTemplate.MatrixNode;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 public class MatrixVisuals {
 
     @SuppressWarnings("deprecation")
-    public static ItemStack buildNodeIcon(SpellNode node, boolean isUnlocked, boolean isActive, boolean canUnlock, String socketItemName) {
+    public static ItemStack buildNodeIcon(MatrixNode node, boolean isUnlocked, boolean isActive, boolean canUnlock, String socketItemName) {
         ItemStack item;
         ItemMeta meta;
         List<String> lore = new ArrayList<>();
@@ -49,86 +49,50 @@ public class MatrixVisuals {
                     // Tem runa dentro
                     item = new ItemStack(Material.EMERALD); // Placeholder, idealmente seria dynamic
                     meta = item.getItemMeta();
-                    if (meta != null) meta.displayName(MessageUtils.parse("<green>♦ " + socketItemName));
+                    if (meta != null) meta.displayName(MessageUtils.parse("<green>✦ " + socketItemName));
                     lore.add("<gray>Runa equipada.");
-                    lore.add("<yellow>Clique para remover ou trocar.");
-                    // Brilho para indicar poder
-                    if (meta != null) {
-                        meta.addEnchant(Enchantment.UNBREAKING, 1, true);
-                        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-                    }
+                    lore.add("<gray>Clique para remover.");
                 } else {
-                    // Soquete Vazio
-                    item = new ItemStack(Material.IRON_NUGGET); // Use CustomModelData para parecer um anel vazio
+                    // Vazio
+                    item = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
                     meta = item.getItemMeta();
-                    if (meta != null) meta.displayName(MessageUtils.parse("<dark_gray>○ Soquete Vazio"));
-                    lore.add("<gray>Espaço para runas de poder.");
-                    lore.add("<yellow>Clique para inserir uma runa.");
+                    if (meta != null) meta.displayName(MessageUtils.parse("<gray>○ Engaste Vazio"));
+                    lore.add("<gray>Clique para equipar uma runa.");
                 }
             } else {
-                // É uma Mutação/Habilidade
-                Material iconMat = Material.BOOK;
-                try {
-                    if (node.getIcon() != null) {
-                        iconMat = Material.valueOf(node.getIcon().toUpperCase());
-                    }
-                } catch (IllegalArgumentException ignored) {}
-                
-                item = new ItemStack(iconMat);
+                // É um Talento (Root, Mutation, Passive)
+                Material mat = Material.matchMaterial(node.getIconMaterial());
+                if (mat == null) mat = Material.NETHER_STAR;
+                item = new ItemStack(mat);
                 meta = item.getItemMeta();
-                 
+                
+                if (meta != null) {
+                    meta.setCustomModelData(node.getCustomModelData());
+                    meta.displayName(MessageUtils.parse("<green>" + node.getDisplayName()));
+                }
+
                 if (isActive) {
-                    if (meta != null) {
-                        meta.displayName(MessageUtils.parse("<green><bold>★ " + node.getDisplayName()));
-                        lore.add("<green>✔ Habilidade Ativa");
-                        lore.add("<gray>Esta modificação está aplicada.");
-                        
-                        // O "Glint" (Brilho) é crucial para mostrar atividade
-                        meta.addEnchant(Enchantment.UNBREAKING, 1, true);
-                        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-                    }
+                    lore.add("<green>✔ Ativo");
+                    item.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
+                    if (meta != null) meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
                 } else {
-                    if (meta != null) {
-                        meta.displayName(MessageUtils.parse("<gray>" + node.getDisplayName()));
-                        lore.add("<dark_gray>Desativado");
-                        lore.add("<yellow>Clique para ativar.");
-                    }
+                    lore.add("<yellow>⚠ Inativo (Clique para ativar)");
                 }
             }
         }
 
-        if (meta != null) {
-            // Aplicar Lore e CustomModelData
-            if (node.getModelData() > 0 && isUnlocked) {
-                meta.setCustomModelData(node.getModelData());
-            }
-            
-            meta.lore(lore.stream().map(MessageUtils::parse).collect(Collectors.toList()));
-            meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES); // Limpar visual sujo
-            item.setItemMeta(meta);
-        }
-
-        return item;
-    }
-    
-    public static ItemStack getBackground() {
-        ItemStack item = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
-        ItemMeta meta = item.getItemMeta();
-        if (meta != null) meta.displayName(Component.text(" "));
+        if (meta == null) return item;
+        
+        // Finalizar Lore (adicionar lore customizada do node se houver, aqui simplified)
+        
+        // Converter List<String> para List<Component>
+        List<Component> componentLore = lore.stream()
+            .map(MessageUtils::parse)
+            .collect(Collectors.toList());
+        
+        meta.lore(componentLore);
         item.setItemMeta(meta);
-        return item;
-    }
-    
-    @SuppressWarnings("deprecation")
-    public static ItemStack getConnectionLine(boolean unlocked) {
-        ItemStack item = new ItemStack(unlocked ? Material.WHITE_STAINED_GLASS_PANE : Material.BLACK_STAINED_GLASS_PANE);
-        ItemMeta meta = item.getItemMeta();
-        if (meta != null) {
-            meta.displayName(Component.text(" "));
-            // Se quiser usar model data para criar "fios" ou "tubos"
-            meta.setCustomModelData(101); 
-        }
-        item.setItemMeta(meta);
+        
         return item;
     }
 }

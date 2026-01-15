@@ -5,7 +5,7 @@ import me.ray.midgard.core.profile.MidgardProfile;
 import me.ray.midgard.core.text.MessageUtils;
 import me.ray.midgard.modules.combat.CombatData;
 import me.ray.midgard.modules.spells.SpellsModule;
-import me.ray.midgard.modules.spells.data.SpellProfile;
+import me.ray.midgard.modules.spells.profile.SpellProfile;
 import me.ray.midgard.modules.spells.manager.SpellManager;
 import me.ray.midgard.modules.spells.obj.Spell;
 import org.bukkit.Bukkit;
