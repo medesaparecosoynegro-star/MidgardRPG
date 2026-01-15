@@ -87,6 +87,10 @@ public class SpellsModule extends RPGModule {
     public MatrixTemplateManager getTemplateManager() {
         return templateManager;
     }
+    
+    public me.ray.midgard.modules.spells.listener.EditorListener getEditorListener() {
+        return editorListener;
+    }
 
     private void loadMessages() {
         File file = new File(getPlugin().getDataFolder(), "modules/spells/messages.yml");

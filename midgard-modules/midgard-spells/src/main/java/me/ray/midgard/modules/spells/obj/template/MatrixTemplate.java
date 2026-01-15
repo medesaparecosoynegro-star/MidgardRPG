@@ -35,6 +35,10 @@ public class MatrixTemplate {
         nodes.put(slot, node);
     }
     
+    public void removeNode(int slot) {
+        nodes.remove(slot);
+    }
+    
     public MatrixNode getNode(int slot) {
         return nodes.get(slot);
     }

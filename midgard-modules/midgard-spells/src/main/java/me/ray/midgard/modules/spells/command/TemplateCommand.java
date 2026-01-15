@@ -3,6 +3,8 @@ package me.ray.midgard.modules.spells.command;
 import me.ray.midgard.core.command.MidgardCommand;
 import me.ray.midgard.core.text.MessageUtils;
 import me.ray.midgard.modules.spells.SpellsModule;
+import me.ray.midgard.modules.spells.obj.template.MatrixTemplate;
+import me.ray.midgard.modules.spells.gui.editor.MatrixTemplateEditor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.util.StringUtil;
@@ -40,6 +42,7 @@ public class TemplateCommand extends MidgardCommand {
         if (args.length == 1) {
             List<String> options = new ArrayList<>();
             options.add("edit");
+            options.add("create");
             options.add("list");
             return StringUtil.copyPartialMatches(args[0], options, new ArrayList<>());
         }
@@ -52,7 +55,7 @@ public class TemplateCommand extends MidgardCommand {
     @Override
     public void execute(CommandSender sender, String[] args) {
         SpellsModule module = getModule();
-        // Ensure module is loaded to get messages. If not, we can't do much but hardcode error.
+        
         if (module == null) {
             sender.sendMessage("§cSystem Error: SpellsModule not active.");
             return;
@@ -83,9 +86,19 @@ public class TemplateCommand extends MidgardCommand {
                     MessageUtils.send(player, module.getMessage("command.usage"));
                     return;
                 }
-                // String id = args[1];
-                // new MatrixEditorMenu(player, module, id).open();
-                MessageUtils.send(player, "<red>Editor temporariamente desativado para refatoração.");
+                String id = args[1];
+                
+                MatrixTemplate template = module.getTemplateManager().getTemplate(id);
+                if (template == null) {
+                    if (action.equals("create")) {
+                        template = new MatrixTemplate(id, id); 
+                    } else {
+                        MessageUtils.send(player, "<red>Template '" + id + "' not found. Use 'create' to make a new one.");
+                        return;
+                    }
+                }
+                
+                new MatrixTemplateEditor(player, module, template).open();
                 break;
                 
             case "list":
@@ -98,13 +111,20 @@ public class TemplateCommand extends MidgardCommand {
                 
             default:
                 sendHelp(player, module);
-                break;
         }
     }
     
     private void sendHelp(Player p, SpellsModule module) {
-        for (String line : module.getMessageList("command.help")) {
-            MessageUtils.send(p, line);
+        List<String> help = module.getMessageList("command.help");
+        if (help == null || help.isEmpty()) {
+            MessageUtils.send(p, "<yellow>Available Commands:");
+            MessageUtils.send(p, " <gray>/template create <id>");
+            MessageUtils.send(p, " <gray>/template edit <id>");
+            MessageUtils.send(p, " <gray>/template list");
+        } else {
+            for (String line : help) {
+                MessageUtils.send(p, line);
+            }
         }
     }
 }

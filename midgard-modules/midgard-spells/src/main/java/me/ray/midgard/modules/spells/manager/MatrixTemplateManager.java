@@ -77,6 +77,7 @@ public class MatrixTemplateManager {
     }
 
     public void saveTemplate(MatrixTemplate template) {
+        templates.put(template.getId(), template); // Ensure it's in memory
         File file = new File(templateFolder, template.getId() + ".yml");
         YamlConfiguration config = new YamlConfiguration();
         
