@@ -1,0 +1,36 @@
+title: Navegador de Itens
+next-page: <green>Próxima Página
+previous-page: <green>Página Anterior
+close: <red>Fechar
+category-lore: <gray>Clique para ver itens nesta categoria.
+category-lore-fallback: <gray>Existem <yellow>%d <gray>itens neste tipo.
+click-to-get: <yellow>Clique para pegar
+shift-click-to-edit: <red>Shift-Clique para editar
+click-to-delete-item: <red><bold>CLIQUE PARA DELETAR
+buttons:
+  delete:
+    name: '<red>Deletar Item'
+    mode-active: <red><bold>MODO DE DELEÇÃO ATIVO
+    click-to-delete: <gray>Clique em um item para deletá-lo.
+    click-to-cancel: <gray>Clique aqui novamente para cancelar.
+    click-to-enable: <gray>Clique para ativar o modo de deleção.
+  back:
+    name: '<yellow>Voltar'
+  create:
+    name: '<green>Criar Novo Item'
+messages:
+  delete-not-implemented: '<red>Função de deletar ainda não implementada.'
+  enter-id: '<yellow>[Midgard] <gray>Escreva no chat o ID do novo item.'
+  cancel-abort: '<yellow>[Midgard] <gray>Digite ''cancel'' para cancelar.'
+  id-exists: '<red>Item com ID %s já existe!'
+  creating-item: '<green>Criando item %s...'
+  edit-error: '<red>Erro ao encontrar item para edição: %s'
+  received: '<green>Você recebeu %amount%x %s'
+delete-confirmation:
+  title: 'Confirmar Deleção: %s'
+  confirm:
+    name: <green><bold>CONFIRMAR DELEÇÃO
+    lore: <gray>Esta ação não pode ser desfeita.
+  cancel:
+    name: <red><bold>CANCELAR
+  success: <green>Item deletado com sucesso.

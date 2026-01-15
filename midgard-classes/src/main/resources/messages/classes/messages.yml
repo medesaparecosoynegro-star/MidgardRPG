@@ -1,0 +1,7 @@
+usage: "<red>❌ Uso correto: /class set <classe>"
+not-found: "<red>❌ Classe não encontrada: <arg>"
+profile-error: "<red>⚠ Erro ao carregar perfil."
+success: "<green>✔ Você agora é um <class_name>!"
+attributes:
+  not_enough_points: "<red>Você não tem pontos suficientes!"
+  points_received: "<green>Você recebeu %s pontos de atributo!"

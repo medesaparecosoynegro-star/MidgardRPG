@@ -1,0 +1,1206 @@
+title: 'Edição de Item: %id%'
+messages:
+  editing: '<yellow>Editando: <white>%s'
+  no-editor: <red>Nenhum editor atribuído para este atributo ainda.
+  material-updated: <green>Material atualizado com sucesso!
+buttons:
+  get_item:
+    name: '<green>Obter Item'
+    lore:
+      - '<gray>Click to get this item.'
+  close:
+    name: '<red>Fechar'
+stats:
+  damage_types:
+    name: '<green>Tipos de Dano'
+    lore:
+      - '<gray>Clique para editar os tipos de dano.'
+      - ''
+      - '<yellow>» Clique para abrir o editor.'
+  display_name:
+    name: '<green>Nome de Exibição'
+    lore:
+      - '<gray>O nome de exibição do item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  revision_id:
+    name: '<green>ID de Revisão'
+    lore:
+      - '<gray>O ID de Revisão é usado para determinar'
+      - '<gray>se um item está desatualizado ou não. Você'
+      - '<gray>deve aumentar isso sempre que'
+      - '<gray>fizer alterações no seu item!'
+      - ''
+      - '<gold>O atualizador é inteligente e aplicará'
+      - '<gold>mudanças nos atributos base do item,'
+      - '<gold>mantendo gemas intactas (por exemplo).'
+      - ''
+      - '<gray>ID de Revisão Atual: <green>%value%'
+      - ''
+      - '<yellow>? Clique direito para aumentar este valor.'
+      - '<yellow>? Clique esquerdo para diminuir este valor.'
+  material:
+    name: '<green>Material'
+    lore:
+      - '<gray>O material do seu item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  tier:
+    name: '<green>Tier do Item'
+    lore:
+      - '<gray>O tier (raridade) do item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  base_item_damage:
+    name: '<green>Dano Base do Item'
+    lore:
+      - '<gray>Dano padrão do item. Isso <red>NÃO'
+      - '<gray>impacta a durabilidade máxima do item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  displayed_type:
+    name: '<green>Tipo Exibido'
+    lore:
+      - '<gray>Esta opção afetará apenas o'
+      - '<gray>tipo exibido na lore do item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  item_model:
+    name: '<green>Modelo do Item'
+    lore:
+      - '<gray>Modelo a ser usado para renderizar o item.'
+      - ''
+      - '<gray>Disponível apenas na 1.21.2+'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  equippable_slot:
+    name: '<green>Slot Equipável'
+    lore:
+      - '<gray>Slot onde o item deve ser equipado.'
+      - '<gray>Valores possíveis são FEET, LEGS, CHEST, HEAD, HAND, OFFHAND.'
+      - '<gray>Definir este valor impedirá que seu item'
+      - '<gray>seja usado em outros slots.'
+      - ''
+      - '<gray>Disponível apenas no MC 1.21.2+'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  equippable_model:
+    name: '<green>Modelo Equipável'
+    lore:
+      - '<gray>Chave nomeada do modelo usado quando o item é equipado.'
+      - '<gray>Disponível apenas no MC 1.21.2+'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  max_custom_durability:
+    name: '<green>Durabilidade Customizada Máxima'
+    lore:
+      - '<gray>Não recomendado na 1.20.5+'
+      - '<gray>A quantidade de usos antes que seu'
+      - '<gray>item se torne inutilizável/quebre.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  max_vanilla_durability:
+    name: '<green>Durabilidade Vanilla Máxima'
+    lore:
+      - '<gray>Disponível apenas na 1.20.5+'
+      - '<gray>Quantidade máxima de durabilidade no seu item.'
+      - '<gray>Isso funciona usando a durabilidade vanilla e é'
+      - '<gray>muito mais estável que a Durabilidade Customizada.'
+      - '<gray>Valor Atual: <white>%value%'
+      - ''
+      - '<yellow>Clique esquerdo para alterar.'
+      - '<yellow>Clique direito para remover.'
+  lost_when_broken:
+    name: '<green>Perdido ao Quebrar?'
+    lore:
+      - '<gray>Itens com durabilidade customizada não quebram'
+      - '<gray>por padrão ao atingir 0 de durabilidade.'
+      - '<gray>Ative esta opção para fazer seu item quebrar.'
+      - ''
+      - '<gray>Por padrão, itens vanilla quebram ao atingir'
+      - '<gray>0 de durabilidade. Ative esta opção para não quebrar.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher uma probabilidade para ter esta opção.'
+  nbt_tags:
+    name: '<green>Tags NBT'
+    lore:
+      - '<gray>Tags NBT Customizadas.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique para adicionar uma tag.'
+      - '<yellow>» Clique direito para remover a última tag.'
+  lore:
+    name: '<green>Lore'
+    lore:
+      - '<gray>A lore do item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique para adicionar uma linha.'
+      - '<yellow>» Clique direito para remover a última linha.'
+  custom_model_data_strings:
+    name: '<green>Strings de Custom Model Data'
+    lore:
+      - '<gray>Strings para seu custom model data. Considere usar'
+      - '<gray>isso sobre custom model data na 1.21.4+'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique para adicionar uma string.'
+      - '<yellow>» Clique direito para remover a última string.'
+  custom_model_data_floats:
+    name: '<green>Floats de Custom Model Data'
+    lore:
+      - '<gray>Floats para seu custom model data. Considere usar'
+      - '<gray>isso sobre custom model data na 1.21.4+'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique para adicionar um float.'
+      - '<yellow>» Clique direito para remover o último float.'
+  max_stack_size:
+    name: '<green>Tamanho Máximo do Pack'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Quantidade máxima de itens que'
+      - '<gray>podem ser empilhados (1.20.5+).'
+      - '<gray>Valor máximo é 99.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  lore_format:
+    name: '<green>Formato de Lore'
+    lore:
+      - '<gray>O formato de lore decide'
+      - '<gray>onde cada atributo vai.'
+      - '<blue>Formatos podem ser configurados na'
+      - '<blue>pasta lore-formats'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  custom_model_data:
+    name: '<green>Custom Model Data'
+    lore:
+      - '<gray>Seu custom model data inteiro 1.14+.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  custom_tooltip:
+    name: '<green>Tooltip Customizada'
+    lore:
+      - '<gray>O identificador da textura de tooltip customizada do MMOItems'
+      - '<gray>que você gostaria de usar. Verifique a wiki para uso!'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  vanilla_tooltip_style:
+    name: '<green>Estilo de Tooltip Vanilla'
+    lore:
+      - '<gray>Estilo de tooltip vanilla do seu item'
+      - '<gray>Disponível apenas na 1.21.2+'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  enchantments:
+    name: '<green>Encantamentos'
+    lore:
+      - '<gray>Os encantamentos do item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique para adicionar um encantamento.'
+      - '<yellow>» Clique direito para remover o último encantamento.'
+  hide_enchantments:
+    name: '<green>Esconder Encantamentos'
+    lore:
+      - '<gray>Ative para esconder completamente os'
+      - '<gray>encantamentos do seu item. Você ainda pode ver o efeito de brilho.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher uma probabilidade para ter esta opção.'
+  hide_tooltip:
+    name: '<green>Esconder Tooltip'
+    lore:
+      - '<gray>Esconde completamente a tooltip do item,'
+      - '<gray>se é isso que você quer fazer.'
+      - '<gray>Disponível apenas na 1.20.5+'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher uma probabilidade para ter esta opção.'
+  permission:
+    name: '<green>Permissão'
+    lore:
+      - '<gray>A permissão necessária para usar este item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique para adicionar uma permissão compatível.'
+      - '<yellow>» Clique direito para remover a última permissão.'
+  item_particles:
+    name: '<green>Partículas do Item'
+    lore:
+      - '<gray>As partículas exibidas ao'
+      - '<gray>segurar/vestir seu item.'
+      - ''
+      - '<blue>Um tutorial está disponível na wiki.'
+      - ''
+      - '<yellow>» Clique esquerdo para configurar as partículas do item.'
+      - '<yellow>» Clique direito para limpar.'
+  disable_interaction:
+    name: '<green>Desativar Interação'
+    lore:
+      - '<gray>Desative qualquer interação indesejada:'
+      - '<gray>colocação de blocos, uso de item...'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher uma probabilidade para ter esta opção.'
+  disable_crafting:
+    name: '<green>Desativar Crafting'
+    lore:
+      - '<gray>Jogadores não podem usar este item enquanto craftam.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher uma probabilidade para ter esta opção.'
+  disable_smelting:
+    name: '<green>Desativar Fornalha'
+    lore:
+      - '<gray>Jogadores não podem usar este item em fornalhas.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher uma probabilidade para ter esta opção.'
+  disable_repairing:
+    name: '<green>Desativar Reparo'
+    lore:
+      - '<gray>Jogadores não podem usar este item em bigornas.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher uma probabilidade para ter esta opção.'
+  disable_enchanting:
+    name: '<green>Desativar Encantamento'
+    lore:
+      - '<gray>Jogadores não podem encantar este item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher uma probabilidade para ter esta opção.'
+  disable_smithing:
+    name: '<green>Desativar Smithing'
+    lore:
+      - '<gray>Jogadores não podem usar este item em mesas de ferraria.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher uma probabilidade para ter esta opção.'
+  disable_item_dropping:
+    name: '<green>Desativar Drop de Item'
+    lore:
+      - '<gray>Desativa o drop deste item!'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher uma probabilidade para ter esta opção.'
+  required_level:
+    name: '<green>Nível Necessário'
+    lore:
+      - '<gray>O nível que seu item precisa'
+      - '<gray>para ser usado.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  required_class:
+    name: '<green>Classe Necessária'
+    lore:
+      - '<gray>A classe que você precisa'
+      - '<gray>professar para usar seu item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique para adicionar uma classe.'
+      - '<yellow>» Clique direito para remover a última classe.'
+  critical_strike_chance:
+    name: '<green>Chance de Crítico'
+    lore:
+      - '<gray>Ataques Críticos causam mais dano.'
+      - '<gray>Em % de chance.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  critical_strike_power:
+    name: '<green>Poder de Crítico'
+    lore:
+      - '<gray>O dano extra que críticos de arma causam.'
+      - '<gray>(Acumula com valor padrão)'
+      - '<gray>Em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  skill_critical_strike_chance:
+    name: '<green>Chance de Crítico de Habilidade'
+    lore:
+      - '<gray>Aumenta a chance de causar críticos de habilidade (em %).'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  skill_critical_strike_power:
+    name: '<green>Poder de Crítico de Habilidade'
+    lore:
+      - '<gray>Dano extra causado (em %) por críticos de habilidade.'
+      - '<gray>(Acumula com valor padrão)'
+      - '<gray>Em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  block_power:
+    name: '<green>Poder de Bloqueio'
+    lore:
+      - '<gray>A % do dano que sua'
+      - '<gray>armadura/escudo pode bloquear.'
+      - '<gray>Padrão: 25%'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  block_rating:
+    name: '<green>Taxa de Bloqueio'
+    lore:
+      - '<gray>A chance que sua peça de armadura'
+      - '<gray>tem de bloquear qualquer ataque de entidade.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  block_cooldown_reduction:
+    name: '<green>Redução de Cooldown de Bloqueio'
+    lore:
+      - '<gray>Reduz o cooldown de bloqueio (%).'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  dodge_rating:
+    name: '<green>Taxa de Esquiva'
+    lore:
+      - '<gray>A chance de esquivar de um ataque.'
+      - '<gray>Esquivar nega completamente'
+      - '<gray>o dano do ataque.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  dodge_cooldown_reduction:
+    name: '<green>Redução de Cooldown de Esquiva'
+    lore:
+      - '<gray>Reduz o cooldown de esquiva (%).'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  parry_rating:
+    name: '<green>Taxa de Aparar'
+    lore:
+      - '<gray>A chance de aparar um ataque.'
+      - '<gray>Aparar nega o dano'
+      - '<gray>e empurra o atacante para trás.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  parry_cooldown_reduction:
+    name: '<green>Redução de Cooldown de Aparar'
+    lore:
+      - '<gray>Reduz o cooldown de aparar (%).'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  cooldown_reduction:
+    name: '<green>Redução de Cooldown'
+    lore:
+      - '<gray>Reduz cooldowns de habilidades de item e jogador (%).'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  weapon_damage:
+    name: '<green>Dano de Arma'
+    lore:
+      - '<gray>Dano adicional de arma ao acertar em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  skill_damage:
+    name: '<green>Dano de Habilidade'
+    lore:
+      - '<gray>Dano adicional de habilidade em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  projectile_damage:
+    name: '<green>Dano de Projétil'
+    lore:
+      - '<gray>Dano adicional de projétil de habilidade/arma.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  physical_damage:
+    name: '<green>Dano Físico'
+    lore:
+      - '<gray>Dano físico adicional de habilidade/arma.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  magic_damage:
+    name: '<green>Dano Mágico'
+    lore:
+      - '<gray>Dano mágico adicional de habilidade em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  undead_damage:
+    name: '<green>Dano em Mortos-Vivos'
+    lore:
+      - '<gray>Causa dano adicional a mortos-vivos.'
+      - '<gray>Em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  damage_reduction:
+    name: '<green>Redução de Dano'
+    lore:
+      - '<gray>Reduz dano de qualquer fonte.'
+      - '<gray>Em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  defense:
+    name: '<green>Defesa'
+    lore:
+      - '<gray>Reduz dano de qualquer fonte.'
+      - '<gray>Fórmula pode ser definida na Config do MMOLib.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  fall_damage_reduction:
+    name: '<green>Redução de Dano de Queda'
+    lore:
+      - '<gray>Reduz dano de queda.'
+      - '<gray>Em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  projectile_damage_reduction:
+    name: '<green>Redução de Dano de Projétil'
+    lore:
+      - '<gray>Reduz dano de projétil.'
+      - '<gray>Em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  physical_damage_reduction:
+    name: '<green>Redução de Dano Físico'
+    lore:
+      - '<gray>Reduz dano físico.'
+      - '<gray>Em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  fire_damage_reduction:
+    name: '<green>Redução de Dano de Fogo'
+    lore:
+      - '<gray>Reduz dano de fogo.'
+      - '<gray>Em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  magic_damage_reduction:
+    name: '<green>Redução de Dano Mágico'
+    lore:
+      - '<gray>Reduz dano mágico causado por poções.'
+      - '<gray>Em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  lifesteal:
+    name: '<green>Roubo de Vida'
+    lore:
+      - '<gray>Porcentagem de dano que você ganha de volta como'
+      - '<gray>vida ao infligir dano com arma.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  pve_damage_reduction:
+    name: '<green>Redução de Dano PvE'
+    lore:
+      - '<gray>Reduz dano causado por mobs.'
+      - '<gray>Em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  pvp_damage_reduction:
+    name: '<green>Redução de Dano PvP'
+    lore:
+      - '<gray>Reduz dano causado por jogadores.'
+      - '<gray>Em %.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  spell_vampirism:
+    name: '<green>Vampirismo de Feitiço'
+    lore:
+      - '<gray>Porcentagem de dano que você ganha de volta como'
+      - '<gray>vida ao infligir dano de habilidade.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  gravity:
+    name: '<green>Gravidade'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Controla aceleração blocos/tick^2 para baixo. Padrão'
+      - '<gray>é 0.08, e o intervalo válido é de -1 a +1.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  armor_toughness:
+    name: '<green>Resistência de Armadura'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Resistência de armadura reduz dano recebido.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  armor:
+    name: '<green>Armadura'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>A armadura dada ao portador.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  knockback_resistance:
+    name: '<green>Resistência a Repulsão'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>A chance do seu item bloquear a repulsão de'
+      - '<gray>explosões, creepers... 1.0 corresponde a 100%, 0.7'
+      - '<gray>a 70%...'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  item_tier:
+    name: '<green>Tier do Item'
+    lore:
+      - '<gray>O tier define quão raro seu item é'
+      - '<gray>e qual item é dropado quando seu'
+      - '<gray>item é desconstruído.'
+      - '<blue>Tiers podem ser configurados no arquivo tiers.yml'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  max_health:
+    name: '<green>Vida Máxima'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>A quantidade de vida que seu item dá ao portador.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  item_set:
+    name: '<green>Conjunto de Itens'
+    lore:
+      - '<gray>Conjuntos de itens podem dar ao jogador bônus'
+      - '<gray>extras que dependem de quantos itens'
+      - '<gray>do mesmo conjunto você usa.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  max_mana:
+    name: '<green>Mana Máxima'
+    lore:
+      - '<gray>Adiciona mana à sua barra de mana máxima.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  fall_damage_multiplier:
+    name: '<green>Multiplicador de Dano de Queda'
+    lore:
+      - '<gray>Multiplica a quantidade total de dano de queda. Padrão é 1,'
+      - '<gray>e o intervalo válido é de 0 a 100.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  movement_speed:
+    name: '<green>Velocidade de Movimento'
+    lore:
+      - '<gray>Atributo Vanilla'
+      - '<blue>Atributo Vanilla'
+      - '<gray>Aumenta a velocidade de caminhada do jogador. Padrão MC'
+      - '<gray>é 0.1'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  required_biomes:
+    name: '<green>Biomas Necessários'
+    lore:
+      - '<gray>O bioma em que o jogador deve estar'
+      - '<gray>para este item ativar.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique para adicionar uma permissão.'
+      - '<yellow>» Clique direito para remover a última permissão.'
+  disable_drop_on_death:
+    name: '<green>Desativar Drop na Morte'
+    lore:
+      - '<gray>Ative isso para impedir que este item'
+      - '<gray>caia na morte do portador.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher a probabilidade de ter esta opção.'
+  unbreakable:
+    name: '<green>Inquebrável'
+    lore:
+      - '<gray>Durabilidade infinita se definido como verdadeiro.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher a probabilidade de ter esta opção.'
+  camera_overlay:
+    name: '<green>Sobreposição de Câmera'
+    lore:
+      - '<gray>Chave nomeada da textura de sobreposição de câmera.'
+      - '<gray>Disponível apenas na 1.20.4+'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  max_absorption:
+    name: '<green>Absorção Máxima'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Isso não fornece absorção permanente, mas sim'
+      - '<gray>aumenta sua quantidade máxima de corações de absorção'
+      - '<gray>que você pode ter a qualquer momento.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  mining_speed:
+    name: '<green>Velocidade de Mineração'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Velocidade adicional de quebra de blocos. Mãos nuas têm'
+      - '<gray>velocidade de mineração de 1'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  block_interaction_range:
+    name: '<green>Alcance de Interação com Blocos'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Determina o alcance máximo que o jogador pode interagir'
+      - '<gray>com blocos. Varia entre 0 e 64, com o padrão'
+      - '<gray>sendo 4.5 no modo sobrevivência.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  entity_interaction_range:
+    name: '<green>Alcance de Interação com Entidades'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Determina o alcance máximo que o jogador pode interagir'
+      - '<gray>com entidades. Varia entre 0 e 64, com o padrão'
+      - '<gray>sendo 3.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  hide_durability_bar:
+    name: '<green>Esconder Barra de Durabilidade'
+    lore:
+      - '<gray>Ative isso para ter a barra verde'
+      - '<gray>escondida ao usar durabilidade customizada.'
+      - '<gray>Não funciona ao usar durabilidade vanilla.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher a probabilidade de ter esta opção.'
+  unstackable:
+    name: '<green>Não Empilhável'
+    lore:
+      - '<gray>Isso fará com que o item não possa'
+      - '<gray>ser empilhado com ele mesmo.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher a probabilidade de ter esta opção.'
+  jump_strength:
+    name: '<green>Força do Pulo'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Isso controla o impulso base de um pulo (antes de jump'
+      - '<gray>boost ou modificador no bloco). Padrão é 0.42, e o'
+      - '<gray>intervalo válido é de 0 a 32.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  explosion_knockback_resistance:
+    name: '<green>Resistência a Repulsão de Explosão'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Um fator de quanto repulsão uma Entidade recebe de'
+      - '<gray>uma Explosão. Um fator de 1 remove toda a repulsão,'
+      - '<gray>um fator de 0 significa nenhuma redução de repulsão.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  mining_efficiency:
+    name: '<green>Eficiência de Mineração'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Fator de velocidade de mineração adicionado à velocidade ao'
+      - '<gray>usar uma ferramenta que minera eficientemente um bloco. Padrão'
+      - '<gray>e mínimo é 0, máximo é 1024.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  movement_efficiency:
+    name: '<green>Eficiência de Movimento'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Quão eficientemente a entidade pode se mover através de'
+      - '<gray>terreno que retarda o movimento. Um fator de 1 remove'
+      - '<gray>toda penalidade de movimento, um fator de 0 aplica total.'
+      - '<gray>Padrão e mínimo é 0, máximo é 1.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  bonus_oxygen:
+    name: '<green>Oxigênio Bônus'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Fator para a chance de uma Entidade não usar ar'
+      - '<gray>quando submersa. 0 não tem efeito, valores acima de 0 são'
+      - '<gray>usados na fórmula: 1 / ( bonus_oxygen + 1 ). Máximo é 1024.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  sneaking_speed:
+    name: '<green>Velocidade Agachado'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>O fator de velocidade de movimento ao agachar. Um fator de'
+      - '<gray>1 significa agachar tão rápido quanto andar, um fator de'
+      - '<gray>0 significa incapaz de mover enquanto agacha. Padrão é 0.3,'
+      - '<gray>mínimo é 0 e máximo é 1.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  submerged_mining_speed:
+    name: '<green>Velocidade de Mineração Submersa'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>O fator de velocidade de mineração quando submerso. Um fator de'
+      - '<gray>1 significa minerar tão rápido submerso quanto em terra, um fator'
+      - '<gray>de 0 significa incapaz de minerar submerso. Note que'
+      - '<gray>isso representa apenas o fator de submersão em si.'
+      - '<gray>Padrão é 0.2, mínimo é 0 e máximo é 20.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  sweeping_damage_ratio:
+    name: '<green>Razão de Dano de Varredura'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Quanto do dano base de ataque é transferido'
+      - '<gray>para alvos secundários em um ataque de varredura.'
+      - '<gray>Padrão e mínimo é 0, máximo é 1.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  water_movement_efficiency:
+    name: '<green>Eficiência de Movimento na Água'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>O fator de velocidade de movimento quando submerso. Quanto maior,'
+      - '<gray>mais da penalidade de movimento subaquático é mitigada.'
+      - '<gray>Padrão e mínimo é 0, máximo é 1.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  permanent_effects:
+    name: '<green>Efeitos Permanentes'
+    lore:
+      - '<gray>Os efeitos de poção que seu'
+      - '<gray>item concede ao portador.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique para adicionar um efeito.'
+      - '<yellow>» Clique direito para remover o último efeito.'
+  granted_permissions:
+    name: '<green>Permissões Concedidas'
+    lore:
+      - '<gray>Uma lista de permissões que serão'
+      - '<gray>concedidas pelo item.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique para adicionar uma permissão.'
+      - '<yellow>» Clique direito para remover a última permissão.'
+  item_cooldown:
+    name: '<green>Cooldown do Item'
+    lore:
+      - '<gray>Este cooldown se aplica a consumíveis'
+      - '<gray>assim como para comandos de item.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  cooldown_reference:
+    name: '<green>Referência de Cooldown'
+    lore:
+      - '<gray>Dois itens com a mesma referência de cooldown'
+      - '<gray>compartilharão seus cooldowns. Isso é útil'
+      - '<gray>para poções de vida ou mana por exemplo.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  success_rate:
+    name: '<green>Taxa de Sucesso'
+    lore:
+      - '<gray>A chance da sua gema/skin aplicar com sucesso'
+      - '<gray>em um item. Este valor é 100%'
+      - '<gray>por padrão. Se não for aplicado com sucesso,'
+      - '<gray>a gema/skin será perdida.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  crafting:
+    name: '<green>Crafting'
+    lore:
+      - '<gray>As receitas de crafting do seu item.'
+      - '<gray>Alterar uma receita requer /mi reload recipes.'
+      - ''
+      - '<yellow>» Clique para acessar o menu de edição de crafting.'
+      - '<yellow>» Clique direito para remover todas as receitas.'
+  crafting_recipe_permission:
+    name: '<green>Permissão de Receita de Crafting'
+    lore:
+      - '<gray>A permissão necessária para craftar este item.'
+      - '<gray>Alterar este valor requer /mi reload recipes.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  custom_sounds:
+    name: '<green>Sons Customizados'
+    lore:
+      - '<gray>Os sons customizados que seu item usará.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - '<yellow>» Clique para acessar o menu de edição de sons.'
+      - '<yellow>» Clique direito para remover todos os sons.'
+  commands:
+    name: '<green>Comandos'
+    lore:
+      - '<gray>Os comandos que seu item'
+      - '<gray>executa quando clicado com o botão direito.'
+      - '<gray>Comandos Atuais: <blue>%value%'
+      - ''
+      - '<yellow>» Clique para editar comandos do item.'
+  safe_fall_distance:
+    name: '<green>Distância de Queda Segura'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Controla a distância de queda após a qual o jogador recebe'
+      - '<gray>dano de queda. Padrão é 3, e o intervalo válido é de'
+      - '<gray>-1024 a +1024.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  scale:
+    name: '<green>Escala'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Permite alterar o tamanho do jogador para qualquer valor entre'
+      - '<gray>0.0625 e 16 vezes seu tamanho padrão.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  step_height:
+    name: '<green>Altura do Degrau'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Determina a altura máxima em blocos onde um mob pode'
+      - '<gray>andar acima sem pular. Padrão é 0.6, e o'
+      - '<gray>intervalo válido é de 0 a 10.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  burning_time:
+    name: '<green>Tempo de Queima'
+    lore:
+      - '<blue>Atributo Vanilla'
+      - '<gray>Um fator de quanto tempo o jogador permanece em chamas após'
+      - '<gray>ser incendiado. Padrão é 1, mínimo é 0, máximo é 1024.'
+      - '<gray>Valor Atual: <green>%value%'
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  compatible_types:
+    name: '<green>Tipos Compatíveis'
+    lore:
+      - '<gray>Os tipos de item com os quais esta skin é'
+      - '<gray>compatível.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique para adicionar um novo tipo.'
+      - '<yellow>» Clique direito para remover o último tipo.'
+  compatible_ids:
+    name: '<green>IDs Compatíveis'
+    lore:
+      - '<gray>Os IDs de item com os quais esta skin é'
+      - '<gray>compatível.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique para adicionar um novo ID.'
+      - '<yellow>» Clique direito para remover o último ID.'
+  compatible_materials:
+    name: '<green>Materiais Compatíveis'
+    lore:
+      - '<gray>Os materiais de item com os quais esta skin é'
+      - '<gray>compatível.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique para adicionar um novo material.'
+      - '<yellow>» Clique direito para remover o último material.'
+  repair_reference:
+    name: '<green>Referência de Reparo'
+    lore:
+      - '<gray>Um consumível de reparo só pode ser usado em'
+      - '<gray>um item com a mesma referência de reparo.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  amphibian:
+    name: '<green>Anfíbio'
+    lore:
+      - '<gray>Este item só pode ser usado em'
+      - '<gray>ambientes específicos em relação a líquidos?'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique direito para retornar ao padrão.'
+      - '<yellow>» Clique esquerdo para ciclar opções:'
+      - '<gray>* NORMAL, DRY, WET, DAMP, LAVA, MOLTEN, LIQUID, SUBMERGED'
+  item_abilities:
+    name: '<green>Habilidades do Item'
+    lore:
+      - '<gray>As habilidades que seu item tem.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique para acessar o menu de edição de habilidades.'
+      - '<yellow>» Clique direito para remover todas as habilidades.'
+  trim_material:
+    name: '<green>Material de Acabamento'
+    lore:
+      - '<gray>Material para dar acabamento à sua armadura.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique direito para retornar ao padrão.'
+      - '<yellow>» Clique esquerdo para ciclar opções:'
+  trim_pattern:
+    name: '<green>Padrão de Acabamento'
+    lore:
+      - '<gray>Padrão da armadura com acabamento.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique direito para retornar ao padrão.'
+      - '<yellow>» Clique esquerdo para ciclar opções:'
+  hide_armor_trim:
+    name: '<green>Esconder Acabamento de Armadura'
+    lore:
+      - '<gray>Esconde o acabamento da armadura na lore do item.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar este valor.'
+      - '<yellow>» Clique direito para escolher a probabilidade de ter esta opção.'
+  browser_index:
+    name: '<green>Índice do Navegador'
+    lore:
+      - '<blue>Opção de Modelo'
+      - '<gray>Usado para exibir itens similares juntos,'
+      - '<gray>organizadamente na GUI /mmoitems browse'
+      - '<gray>Itens com o mesmo índice são agrupados.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  myluck:
+    name: '<green>Minha Sorte'
+    lore:
+      - '<gray>Esta é uma linha de teste #1'
+      - '<gray>Esta é uma linha de teste #2'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  gem_sockets:
+    name: '<green>Sockets de Gema'
+    lore:
+      - '<gray>Faça seu item lançar habilidades incríveis'
+      - '<gray>para matar monstros ou se buffar.'
+      - '<gray>Habilidades Atuais: <blue>%value%'
+      - ''
+      - '<yellow>» Clique para editar as habilidades do item.'
+  health_regeneration:
+    name: '<green>Regeneração de Vida'
+    lore:
+      - '<gray>Quantidade de pontos de vida regenerados a cada segundo.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  max_health_regeneration:
+    name: '<green>Regeneração de Vida Máxima'
+    lore:
+      - '<gray>Porcentagem de vida máxima regenerada a cada segundo.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  mana_regeneration:
+    name: '<green>Regeneração de Mana'
+    lore:
+      - '<gray>Quantidade de pontos de mana regenerados a cada segundo.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  max_mana_regeneration:
+    name: '<green>Regeneração de Mana Máxima'
+    lore:
+      - '<gray>Porcentagem de mana máxima regenerada a cada segundo.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  stamina_regeneration:
+    name: '<green>Regeneração de Estamina'
+    lore:
+      - '<gray>Quantidade de pontos de estamina regenerados a cada segundo.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  max_stamina_regeneration:
+    name: '<green>Regeneração de Estamina Máxima'
+    lore:
+      - '<gray>Porcentagem de estamina máxima regenerada a cada segundo.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  max_stamina:
+    name: '<green>Estamina Máxima'
+    lore:
+      - '<gray>Estamina máxima adicional.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  max_stellium:
+    name: '<green>Stellium Máximo'
+    lore:
+      - '<gray>Stellium máximo adicional.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  additional_experience:
+    name: '<green>Experiência Adicional'
+    lore:
+      - '<gray>Experiência adicional da classe principal MMOCore em %.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alterar este valor.'
+      - '<yellow>» Clique direito para remover este valor.'
+  disable_advanced_enchants:
+    name: '<green>Desativar Advanced Enchants'
+    lore:
+      - '<gray>Quando ativado, impede jogadores'
+      - '<gray>de aplicar AE neste item.'
+      - '<gray>Valor Atual: <blue>%value%'
+      - ''
+      - '<yellow>» Clique esquerdo para alternar.'
+      - '<yellow>» Clique direito para escolher probabilidade.'
+  required_class:
+    name: '<green>Classe Necessária'
+    lore:
+      - '<gray>A classe necessária para usar este item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique para selecionar uma classe.'
+  required_level:
+    name: '<green>Nível Necessário'
+    lore:
+      - '<gray>O nível necessário para usar este item.'
+      - ''
+      - '<gray>Valor Atual: <green>%value%'
+      - ''
+      - '<yellow>» Clique para editar.'
+editors:
+  boolean:
+    reset: <green>Value reset to false
+    toggled: <green>Value toggled to %value%
+  stat:
+    reset: <green>%stat% reset to 0!
+    enter_value: '<yellow>Enter %stat% in chat (or type ''cancel'' to cancel):'
+    updated: <green>%stat% updated!
+    invalid_format: <red>Invalid number format.
+  string:
+    cleared: <green>%prompt% cleared!
+    enter_value: '<yellow>Enter %prompt% in chat (or type ''cancel'' to cancel):'
+    updated: <green>%prompt% updated!

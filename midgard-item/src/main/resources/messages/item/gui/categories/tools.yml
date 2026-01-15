@@ -1,0 +1,71 @@
+stats:
+  mining_speed:
+    name: '<green>Mining Speed'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>Additional block breaking speed. Bare hands have a'
+      - '<gray>mining speed of 1'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  mining_efficiency:
+    name: '<green>Mining Efficiency'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>Mining Speed factor added to speed when'
+      - '<gray>using a tool that mines efficiently a block. Default'
+      - '<gray>and minimum is 0, maximum is 1024.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  submerged_mining_speed:
+    name: '<green>Submerged Mining Speed'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>The mining speed factor when submerged. A factor of'
+      - '<gray>1 means mining as fast submerged as on land, a factor'
+      - '<gray>of 0 means unable to mine submerged. Note that'
+      - '<gray>this represents only the submersion factor itself.'
+      - '<gray>Default is 0.2, minimum is 0 and maximum is 20.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  block_interaction_range:
+    name: '<green>Block Interaction Range'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>Determines the max range that the player can interact'
+      - '<gray>with blocks. Varies between 0 and 64, with default'
+      - '<gray>being 4.5 in survival mode.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  entity_interaction_range:
+    name: '<green>Entity Interaction Range'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>Determines the max range that the player can interact'
+      - '<gray>with entities. Varies between 0 and 64, with default'
+      - '<gray>being 3.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  bonus_oxygen:
+    name: '<green>Bonus Oxygen'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>Factor for the chance for an Entity to not use up air'
+      - '<gray>when submerged. 0 has no effect, values above 0 are'
+      - '<gray>used in formula: 1 / ( bonus_oxygen + 1 ). Max is 1024.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  burning_time:
+    name: '<green>Burning Time'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>A factor of how long the player remains on fire after'
+      - '<gray>being set on fire. Default is 1, lower is 0, higher is 1024.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'

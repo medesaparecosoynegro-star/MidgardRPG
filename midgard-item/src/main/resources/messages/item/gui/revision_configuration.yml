@@ -1,0 +1,52 @@
+title: Configuração de Revisão
+enabled_config: '<gray>Habilitado (na config)? %s'
+revision_id:
+  name: '<yellow>ID de Revisão'
+  lore:
+    - '<gray>O atualizador está sempre ativo, aumentar'
+    - '<gray>este número atualizará todas as instâncias'
+    - '<gray>deste MMOItem sem ação adicional.'
+    - ''
+    - '<gray>Valor Atual: <yellow>%value%'
+    - ''
+    - '<yellow>Clique para editar'
+toggles:
+  keep_lore:
+    name: '<yellow>Manter Lore'
+    lore:
+      - '<gray>Mantém especificamente linhas de lore que começam'
+      - '<gray>com o código de cor'
+  keep_name:
+    name: '<yellow>Manter Nome'
+    lore:
+      - '<gray>Mantém o nome de exibição do item.'
+  keep_enchantments:
+    name: '<yellow>Manter Encantamentos'
+    lore:
+      - '<gray>Isso mantém especificamente encantamentos que'
+      - '<gray>não são contabilizados em melhorias nem gemas'
+      - '<gray>(presumivelmente adicionados pelo jogador).'
+  keep_external_sh:
+    name: '<yellow>Manter SH Externo'
+    lore:
+      - '<gray>Dados registrados no StatHistory do item'
+      - '<gray>por plugins externos (como'
+      - '<gray>GemStones mas não removíveis)'
+  keep_upgrades:
+    name: '<yellow>Manter Melhorias'
+    lore:
+      - '<gray>Este item manterá o nível de melhoria'
+      - '<gray>após a atualização? Apenas o Nível de Melhoria é'
+      - '<gray>mantido (desde que não exceda o'
+      - '<gray>novo máximo).'
+  keep_gem_stones:
+    name: '<yellow>Manter Gemas'
+    lore:
+      - '<gray>O item manterá suas gemas quando'
+      - '<gray>atualizar? (Note que isso permite overflow de gemas'
+      - '<gray>- manterá TODAS as gemas antigas'
+      - '<gray>mesmo se você reduziu os sockets de gemas)'
+  keep_soulbind:
+    name: '<yellow>Manter Soulbind'
+    lore:
+      - '<gray>Mantém o nível e dados de soulbind.'

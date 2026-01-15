@@ -1,0 +1,64 @@
+# Configuração Principal do MidgardRPG
+# Aqui você define as configurações globais do plugin, como idioma e banco de dados.
+
+settings:
+  # Define o idioma padrão do plugin.
+  # Valores disponíveis: 'pt-br' (Português), 'en-us' (Inglês)
+  locale: pt-br
+
+database:
+  # Tipo de banco de dados a ser utilizado.
+  # Valores recomendados: 'sqlite' (para servidores locais/pequenos) ou 'mysql' (para produção/networks)
+  type: sqlite
+  
+  # Endereço do servidor MySQL (apenas se type: mysql)
+  host: localhost
+  
+  # Porta do servidor MySQL (padrão: 3306)
+  port: 3306
+  
+  # Nome do banco de dados
+  database: midgard_rpg
+  
+  # Usuário do banco de dados
+  username: root
+  
+  # Senha do banco de dados
+  password: password
+  
+  # Usar conexão segura (SSL)? Recomendado 'false' se não tiver certeza.
+  use-ssl: false
+
+redis:
+  # Habilitar suporte a Redis?
+  # Útil para sincronização de dados em redes de servidores (BungeeCord/Velocity).
+  enabled: false
+  
+  # Endereço do servidor Redis
+  host: localhost
+  
+  # Porta do servidor Redis (padrão: 6379)
+  port: 6379
+  
+  # Senha do Redis (deixe vazio "" se não houver)
+  password: ""
+  
+  # Usar conexão segura (SSL) para o Redis?
+  use-ssl: false
+
+modules:
+  combat: true
+  essentials: true
+  classes: true
+  item: true
+  mythicmobs: true
+  character: true
+
+debug:
+  # Ativa o sistema de debug globalmente
+  enabled: true
+  
+  # Lista de categorias ativas para visualização no console e ingame (admins)
+  # Valores: CORE, COMBAT, ITEMS, SPELLS, SCRIPT, DATABASE, LOADER, ALL
+  categories:
+    - ALL

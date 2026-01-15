@@ -1,0 +1,21 @@
+# ============================================
+# MIDGARD COMBAT - MESSAGES
+# Version: 2.0.0
+# ============================================
+
+
+combat_mode:
+  enabled: "<green>✔ Modo de Combate Ativado!"
+  disabled: "<yellow>⚠ Modo de Combate Desativado."
+
+# Mensagens de dano elemental removidas - feedback via hologramas
+
+status:
+  health_regenerated: "<green>+ %amount% ?"
+  mana_regenerated: "<blue>+ %amount% ?"
+  stamina_low: "<red>? Estamina Baixa!"
+  stamina_exhausted: "<red>? Exausto!"
+
+progression:
+  combat_level_up: "<gold>Subiu de n�vel de combate! <yellow>%old_level% ? %new_level%"
+  xp_gained: "<gray>+ %amount% XP de Combate"

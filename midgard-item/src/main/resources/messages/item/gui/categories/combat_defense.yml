@@ -1,0 +1,157 @@
+stats:
+  block_power:
+    name: '<green>Block Power'
+    lore:
+      - '<gray>The % of the damage your'
+      - '<gray>armor/shield can block.'
+      - '<gray>Default: 25%'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  block_rating:
+    name: '<green>Block Rating'
+    lore:
+      - '<gray>The chance your armor piece'
+      - '<gray>has to block any entity attack.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  block_cooldown_reduction:
+    name: '<green>Block Cooldown Reduction'
+    lore:
+      - '<gray>Reduces block cooldown (%).'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  dodge_rating:
+    name: '<green>Dodge Rating'
+    lore:
+      - '<gray>The chance to dodge an attack.'
+      - '<gray>Dodging completely negates'
+      - '<gray>the attack damage.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  dodge_cooldown_reduction:
+    name: '<green>Dodge Cooldown Reduction'
+    lore:
+      - '<gray>Reduces dodge cooldown (%).'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  parry_rating:
+    name: '<green>Parry Rating'
+    lore:
+      - '<gray>The chance to parry an attack.'
+      - '<gray>Parrying negates damage'
+      - '<gray>and knocks the attacker back.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  parry_cooldown_reduction:
+    name: '<green>Parry Cooldown Reduction'
+    lore:
+      - '<gray>Reduces parry cooldown (%).'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  damage_reduction:
+    name: '<green>Damage Reduction'
+    lore:
+      - '<gray>Reduces damage from any source.'
+      - '<gray>In %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  defense:
+    name: '<green>Defense'
+    lore:
+      - '<gray>Reduces damage from any source.'
+      - '<gray>Formula can be defined in MMOLib Config.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  fall_damage_reduction:
+    name: '<green>Fall Damage Reduction'
+    lore:
+      - '<gray>Reduces fall damage.'
+      - '<gray>In %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  projectile_damage_reduction:
+    name: '<green>Projectile Damage Reduction'
+    lore:
+      - '<gray>Reduces projectile damage.'
+      - '<gray>In %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  physical_damage_reduction:
+    name: '<green>Physical Damage Reduction'
+    lore:
+      - '<gray>Reduces physical damage.'
+      - '<gray>In %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  fire_damage_reduction:
+    name: '<green>Fire Damage Reduction'
+    lore:
+      - '<gray>Reduces fire damage.'
+      - '<gray>In %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  magic_damage_reduction:
+    name: '<green>Magic Damage Reduction'
+    lore:
+      - '<gray>Reduces magic damage dealt by potions.'
+      - '<gray>In %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  pve_damage_reduction:
+    name: '<green>PvE Damage Reduction'
+    lore:
+      - '<gray>Reduces damage taken from mobs.'
+      - '<gray>In %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  pvp_damage_reduction:
+    name: '<green>PvP Damage Reduction'
+    lore:
+      - '<gray>Reduces damage taken from players.'
+      - '<gray>In %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  fall_damage_multiplier:
+    name: '<green>Fall Damage Multiplier'
+    lore:
+      - '<gray>Multiplies the total amount of fall damage. Default is 1,'
+      - '<gray>and valid range is from 0 to 100.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  knockback_resistance:
+    name: '<green>Knockback Resistance'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>The chance for your item to block knockback from'
+      - '<gray>explosions, creepers... 1.0 corresponds to 100%, 0.7'
+      - '<gray>to 70%...'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  explosion_knockback_resistance:
+    name: '<green>Explosion Knockback Resistance'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>A factor of how much knockback an Entity receives from'
+      - '<gray>an Explosion. A factor of 1 removes all knockback,'
+      - '<gray>a factor of 0 means no knockback reduction.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'

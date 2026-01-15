@@ -1,0 +1,68 @@
+type_selection:
+  title: Selecionar Tipo de Receita
+  click_to_manage:
+    - '<gray>Clique para gerenciar receitas'
+    - '<gray>deste tipo.'
+  types:
+    smithing: '<yellow>Mesa de Ferraria'
+    super_shaped: '<yellow>Super Shaped'
+    smoker: '<yellow>Defumador'
+    furnace: '<yellow>Fornalha'
+    shaped: '<yellow>Com Forma'
+    mega_shaped: '<yellow>Mega Shaped'
+    campfire: '<yellow>Fogueira'
+    shapeless: '<yellow>Sem Forma'
+    blast_furnace: '<yellow>Alto-Forno'
+editor:
+  common:
+    back: '<red>Voltar'
+    get_item:
+      name: '<green>Obter Item'
+      lore:
+        - '<gray>Clique para pegar este item.'
+    output_mode:
+      name: '<yellow>Modo de Saída'
+      lore:
+        - '<gray>Clique para alternar o modo.'
+        - '<gray>Atual: %s'
+      shaped: '<green>COM FORMA'
+      shapeless: '<yellow>SEM FORMA'
+    output_amount:
+      name: '<yellow>Quantidade de Saída'
+      lore:
+        - '<gray>Clique para alterar a quantidade.'
+        - '<gray>Atual: <white>%s'
+    duration:
+      name: '<yellow>Duração'
+      lore:
+        - '<gray>Tempo de cozimento em ticks.'
+        - '<gray>Atual: <white>%s'
+    experience:
+      name: '<yellow>Experiência'
+      lore:
+        - '<gray>XP gerado ao cozinhar.'
+        - '<gray>Atual: <white>%s'
+    hide_book:
+      name: '<yellow>Livro de Receitas'
+      lore:
+        - '<gray>Visibilidade no livro de receitas.'
+        - '<gray>Atual: %s'
+      hidden: '<green>OCULTO'
+      shown: '<red>VISÍVEL'
+    invalid_ingredient: '<red>Inválido: %s'
+    item_added: '<green>Item adicionado à receita.'
+    no_item: '<red>Nenhum item selecionado.'
+    separator: '<dark_gray><strikethrough>----------------'
+    prompts:
+      output_amount: Quantidade de Saída
+configuration:
+  title: Configuração de Receita
+  recipe_item:
+    name: '<yellow>Receita #%id%'
+    lore:
+      - '<gray>Clique para editar esta receita.'
+  new_recipe:
+    name: '<green>Criar Nova Receita'
+    lore:
+      - '<gray>Clique para criar uma nova receita'
+      - '<gray>deste tipo.'

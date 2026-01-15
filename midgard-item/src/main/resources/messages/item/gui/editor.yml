@@ -1,0 +1,51 @@
+enter-prompt: '<yellow>Digite %s no chat:'
+invalid-number: <red>Formato de número inválido.
+reset: <green>%s redefinido para 0!
+enter-prompt-cancel: '<yellow>Digite %s no chat (ou digite ''cancel'' para cancelar):'
+updated: <green>%s atualizado!
+reset-stone: <green>%s redefinido para STONE!
+invalid-material: <red>Material inválido.
+prompt:
+  revision-id: ID de Revisão
+  material: Material
+  base-item-damage: Dano Base do Item
+  custom-model-data: Custom Model Data
+  custom-model-data-strings: Custom Model Data Strings
+  custom-model-data-floats: Custom Model Data Floats
+  item-model: Modelo do Item
+  equippable-slot: Slot Equipável
+  equippable-model: Modelo Equipável
+  max-custom-durability: Durabilidade Customizada Máxima
+  max-vanilla-durability: Durabilidade Vanilla Máxima
+  display-name: Nome de Exibição
+  lore: Lore
+  nbt-tags: Tags NBT
+  max-stack-size: Tamanho Máximo do Pack
+  lore-format: Formato da Lore
+  custom-tooltip: Tooltip Customizada
+  vanilla-tooltip-style: Estilo de Tooltip Vanilla
+  displayed-type: Tipo Exibido
+  enchantments: Encantamentos
+  permission: Permissão
+  item-particles: Partículas do Item
+  required-class: Classe Necessária
+  item-tier: Tier do Item
+  item-set: Set do Item
+  required-biomes: Biomas Necessários
+  camera-overlay: Overlay de Câmera
+  permanent-effects: Efeitos Permanentes
+  granted-permissions: Permissões Concedidas
+  cooldown-reference: Referência de Cooldown
+  crafting-recipe-permission: Permissão de Receita de Crafting
+  custom-sounds: Sons Customizados
+  commands: Comandos
+  compatible-types: Tipos Compatíveis
+  compatible-ids: IDs Compatíveis
+  compatible-materials: Materiais Compatíveis
+  repair-reference: Referência de Reparo
+  item-abilities: Habilidades do Item
+  gem-sockets: Sockets de Gemas
+  trim-material: Material de Trim
+  trim-pattern: Padrão de Trim
+  browser-index: Índice do Navegador
+  required-level: Nível Necessário

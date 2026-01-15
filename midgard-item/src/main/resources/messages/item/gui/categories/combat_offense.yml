@@ -1,0 +1,105 @@
+stats:
+  weapon_damage:
+    name: '<green>Weapon Damage'
+    lore:
+      - '<gray>Additional weapon damage in %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  skill_damage:
+    name: '<green>Skill Damage'
+    lore:
+      - '<gray>Additional skill damage in %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  projectile_damage:
+    name: '<green>Projectile Damage'
+    lore:
+      - '<gray>Additional projectile damage.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  physical_damage:
+    name: '<green>Physical Damage'
+    lore:
+      - '<gray>Additional physical damage.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  magic_damage:
+    name: '<green>Magic Damage'
+    lore:
+      - '<gray>Additional magic damage in %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  undead_damage:
+    name: '<green>Undead Damage'
+    lore:
+      - '<gray>Deals additional damage to undead.'
+      - '<gray>In %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  critical_strike_chance:
+    name: '<green>Critical Strike Chance'
+    lore:
+      - '<gray>Critical Strikes deal more damage.'
+      - '<gray>In % chance.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  critical_strike_power:
+    name: '<green>Critical Strike Power'
+    lore:
+      - '<gray>The extra damage weapon crits deal.'
+      - '<gray>(Stacks with default value)'
+      - '<gray>In %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  skill_critical_strike_chance:
+    name: '<green>Skill Critical Strike Chance'
+    lore:
+      - '<gray>Increases chance to land skill crits (in %).'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  skill_critical_strike_power:
+    name: '<green>Skill Critical Strike Power'
+    lore:
+      - '<gray>Extra damage dealt (in %) by skill crits.'
+      - '<gray>(Stacks with default value)'
+      - '<gray>In %.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  lifesteal:
+    name: '<green>Lifesteal'
+    lore:
+      - '<gray>Percentage of damage you get back as'
+      - '<gray>health when dealing weapon damage.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  spell_vampirism:
+    name: '<green>Spell Vampirism'
+    lore:
+      - '<gray>Percentage of damage you get back as'
+      - '<gray>health when dealing skill damage.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  sweeping_damage_ratio:
+    name: '<green>Sweeping Damage Ratio'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>How much of the base attack damage is transferred'
+      - '<gray>to secondary targets in a sweep attack.'
+      - '<gray>Default and minimum is 0, maximum is 1.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'

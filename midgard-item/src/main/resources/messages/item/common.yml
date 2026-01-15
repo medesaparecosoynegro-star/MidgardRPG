@@ -1,0 +1,13 @@
+'yes': <green>Sim
+'no': <red>Não
+click_to_toggle: <gray>Clique para alternar
+back: <red>Voltar
+item_added: <green>Item adicionado ao inventário.
+none: Nenhum
+in_development: <red><bold>EM DESENVOLVIMENTO
+previous_page: <green>Página Anterior
+next_page: <green>Próxima Página
+signature: '<blue>Midgard'
+add_line: '<green>Adicionar Linha'
+updated_to_latest: <green>Seus itens foram atualizados para a versão mais recente.
+level_requirement: <red>Você precisa ser nível %s para usar este item.

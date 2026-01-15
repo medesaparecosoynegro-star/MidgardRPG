@@ -1,0 +1,173 @@
+stats:
+  permission:
+    name: '<green>Permission'
+    lore:
+      - '<gray>The permission needed to use this item.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Click to add a compatible permission.'
+      - '<yellow>» Right-Click to remove last permission.'
+  required_level:
+    name: '<green>Required Level'
+    lore:
+      - '<gray>The level your item needs'
+      - '<gray>in order to be used.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  required_class:
+    name: '<green>Required Class'
+    lore:
+      - '<gray>The class you need to'
+      - '<gray>profess to use your item.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Click to add a class.'
+      - '<yellow>» Right-Click to remove last class.'
+  disable_interaction:
+    name: '<green>Disable Interaction'
+    lore:
+      - '<gray>Disable any unwanted interaction:'
+      - '<gray>block placement, item use...'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  disable_crafting:
+    name: '<green>Disable Crafting'
+    lore:
+      - '<gray>Players can''t use this item while crafting.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  disable_smelting:
+    name: '<green>Disable Smelting'
+    lore:
+      - '<gray>Players can''t use this item in furnaces.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  disable_repairing:
+    name: '<green>Disable Repairing'
+    lore:
+      - '<gray>Players can''t use this item in anvils.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  disable_enchanting:
+    name: '<green>Disable Enchanting'
+    lore:
+      - '<gray>Players can''t enchant this item.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  disable_smithing:
+    name: '<green>Disable Smithing'
+    lore:
+      - '<gray>Players can''t use this item in smithing tables.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  disable_item_dropping:
+    name: '<green>Disable Item Dropping'
+    lore:
+      - '<gray>Disable dropping this item!'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  disable_drop_on_death:
+    name: '<green>Disable Drop On Death'
+    lore:
+      - '<gray>Enable this to prevent this item from'
+      - '<gray>dropping on holder death.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  unbreakable:
+    name: '<green>Unbreakable'
+    lore:
+      - '<gray>Infinite durability if set to true.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  unstackable:
+    name: '<green>Unstackable'
+    lore:
+      - '<gray>This will make the item unstackable'
+      - '<gray>with same items.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  hide_enchantments:
+    name: '<green>Hide Enchantments'
+    lore:
+      - '<gray>Enable to completely hide your item'
+      - '<gray>enchantments. You can still see the glowing effect.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  hide_tooltip:
+    name: '<green>Hide Tooltip'
+    lore:
+      - '<gray>Completely hides the item tooltip,'
+      - '<gray>if that is what you want to do.'
+      - '<gray>Available only in 1.20.5+'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  hide_armor_trim:
+    name: '<green>Hide Armor Trim'
+    lore:
+      - '<gray>Hides armor trim from item lore.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  compatible_types:
+    name: '<green>Compatible Types'
+    lore:
+      - '<gray>The item types this skin is'
+      - '<gray>compatible with.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Click to add a new type.'
+      - '<yellow>» Right-Click to remove last type.'
+  compatible_ids:
+    name: '<green>Compatible IDs'
+    lore:
+      - '<gray>The item IDs this skin is'
+      - '<gray>compatible with.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Click to add a new ID.'
+      - '<yellow>» Right-Click to remove last ID.'
+  compatible_materials:
+    name: '<green>Compatible Materials'
+    lore:
+      - '<gray>The item materials this skin is'
+      - '<gray>compatible with.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Click to add a new material.'
+      - '<yellow>» Right-Click to remove last material.'

@@ -1,0 +1,1070 @@
+# ============================================
+# MIDGARD SPELLS MODULE - MESSAGES
+# ============================================
+# Padrão V2.0 - Oficial
+# ============================================
+
+
+# ============================================
+# EDITOR DE MATRIX
+# ============================================
+editor:
+  title: "<gradient:#55ffff:#00aaaa><bold>✦ Editor de Matrix: %id% ✦</bold></gradient>"
+  tools:
+    create:
+      name: "<green><bold>FERRAMENTA: Criar Nó</bold></green>"
+      lore:
+        - "<dark_gray>Construtor de Matrix"
+        - ""
+        - "<gray>Cria um novo <white>Nó PASSIVO <gray>no"
+        - "<gray>local alvo. Novos nós começam"
+        - "<gray>bloqueados e desconectados."
+        - ""
+        - "%status%"
+        - "<gray>Então clique em um slot vazio."
+    link:
+      name: "<aqua><bold>FERRAMENTA: Conectar Nós</bold></aqua>"
+      lore:
+        - "<dark_gray>Gerenciador de Dependência"
+        - ""
+        - "<gray>Conecta dois nós para estabelecer uma"
+        - "<gray>cadeia de dependência."
+        - ""
+        - "<white>Lógica:"
+        - "<gray>Jogadores devem desbloquear o <white>Nó Pai"
+        - "<gray>antes de acessar o <white>Nó Filho<gray>."
+        - ""
+        - "%status%"
+        - "<gray>1. Clique no nó <white>Pai <gray>(Origem)"
+        - "<gray>2. Clique no nó <aqua>Filho <gray>(Destino)"
+    type:
+      name: "<gold><bold>FERRAMENTA: Alternar Tipo"
+      lore:
+        - "<dark_gray>Configurador de Componente"
+        - ""
+        - "<gray>Alterna o nó selecionado entre"
+        - "<gray>os tipos disponíveis:"
+        - ""
+        - "<dark_gray>1. <white>SOCKET <gray>(Esmeralda)"
+        - "<gray>   Slot para Runas (Status/Efeitos)."
+        - ""
+        - "<dark_gray>2. <white>MUTATION <gray>(Estrela do Nether)"
+        - "<gray>   Muda a mecânica da habilidade."
+        - ""
+        - "<dark_gray>3. <white>PASSIVE <gray>(Livro)"
+        - "<gray>   Caminho ou status menores."
+        - ""
+        - "%status%"
+        - "<gray>Então clique em um nó para mudar."
+    random:
+      name: "<light_purple><bold>FERRAMENTA: Gerador Aleatório"
+      lore:
+        - "<dark_gray>Procedural Generation"
+        - ""
+        - "<gray>Gera um layout de template"
+        - "<gray>completamente aleatório."
+        - ""
+        - "<yellow><bold>AVISO: ISSO APAGA O ATUAL!"
+        - ""
+        - "%status%"
+        - "<gray>Clique para gerar."
+    delete:
+      name: "<red><bold>FERRAMENTA: Remover Nó"
+      lore:
+        - "<dark_gray>Ação Destrutiva"
+        - ""
+        - "<gray>Remove permanentemente um nó da"
+        - "<gray>matrix. Links para ou deste"
+        - "<gray>nó serão cortados."
+        - ""
+        - "<red><bold>AVISO: Isso não pode ser desfeito!"
+        - ""
+        - "%status%"
+        - "<gray>Então clique em um nó para apagar."
+    save:
+      name: "<light_purple><bold>AÇÃO: Salvar Template"
+      lore:
+        - "<dark_gray>Sistema IO"
+        - ""
+        - "<gray>Salva a estrutura atual em:"
+        - "<white>/templates/%id%.yml"
+        - ""
+        - "<gray>Este template pode ser aplicado a"
+        - "<gray>qualquer habilidade via config."
+        - ""
+        - "<green>✔ Clique para Salvar e Sair"
+    info:
+      name: "<yellow><bold>GUIA DO EDITOR"
+      lore:
+        - "<dark_gray>Limites do Mapa"
+        - ""
+        - "<gray>A grade acima (Linhas 1-5) representa"
+        - "<gray>o layout visual da Matrix."
+        - ""
+        - "<white>Controles:"
+        - "<gray>- Use ferramentas abaixo para construir."
+        - "<gray>- A estrutura define caminhos de desbloqueio."
+        - "<gray>- O Centro (Slot 22) geralmente é a Raiz."
+  node:
+    name: "<gradient:#55ffff:#00aaaa><bold>Nó da Matrix #%slot%</bold></gradient>"
+    lore:
+      - ""
+      - "<gray>┌ <white><bold>INFORMAÇÕES</bold></white>"
+      - "<gray>│ Tipo: %type%"
+      - "<gray>│ Conexões: <aqua>%count% pais</aqua>"
+      - "<gray>└ IDs Pais: <dark_gray>[%parents%]</dark_gray>"
+      - ""
+      - "<gray>┌ <gold><bold>AÇÕES</bold></gold>"
+      - "<gray>│ <yellow>Ferramenta TIPO:</yellow> <white>Mudar Componente</white>"
+      - "<gray>│ <yellow>Ferramenta LINK:</yellow> <white>Criar Conexões</white>"
+      - "<gray>└ <yellow>Sem Ferramenta:</yellow> <white>Clique-Dir Edita ID</white>"
+    skill_display:
+      - ""
+      - "<gray>┌ <light_purple><bold>DADOS EXTRA</bold></light_purple>"
+      - "<gray>└ Skill: <light_purple>%id%</light_purple>"
+    edit_hint: "<yellow>ℹ <underline>Clique-Direito</underline> p/ definir ID</yellow>"
+    selected:
+      - ""
+      - "<green><bold>✔ PAI SELECIONADO</bold></green>"
+      - "<gray>Agora clique em outro nó para</gray>"
+      - "<gray>criar uma conexão (link).</gray>"
+    types:
+      socket: "<green><bold>SOCKET</bold> <gray>(Runa)</gray>"
+      mutation: "<light_purple><bold>MUTATION</bold> <gray>(Efeito)</gray>"
+      mythic_skill: "<light_purple><bold>MYTHIC</bold> <gray>(Skill)</gray>"
+      passive: "<white><bold>PASSIVE</bold> <gray>(Caminho)</gray>"
+      root: "<gold><bold>ROOT</bold> <gray>(Origem)</gray>"
+      connector: "<dark_gray><bold>CONNECTOR</bold> <gray>(Elo)</gray>"
+    cycle:
+      title: "<gold>Próximo Tipo (Ciclo):</gold>"
+      socket: "<green>Socket</green> <dark_gray>→</dark_gray> <light_purple>Mutation</light_purple>"
+      mutation: "<light_purple>Mutation</light_purple> <dark_gray>→</dark_gray> <light_purple>Mythic</light_purple>"
+      mythic_skill: "<light_purple>Mythic</light_purple> <dark_gray>→</dark_gray> <dark_gray>Connector</dark_gray>"
+      passive: "<white>Passive</white> <dark_gray>→</dark_gray> <green>Socket</green>"
+      root: "<gold>Root</gold> <dark_gray>→</dark_gray> <white>Passive</white>"
+      connector: "<dark_gray>Connector</dark_gray> <dark_gray>→</dark_gray> <gold>Root</gold>"
+      click_hint: "<gray>(Use a ferramenta TIPO para mudar)</gray>"
+  messages:
+    tool_active: "<green><bold>✔ ATIVO"
+    tool_inactive: "<yellow>★ Clique para Equipar"
+    create_select: "<green>Ferramenta: CRIAR. Clique num slot vazio."
+    link_select: "<aqua>Ferramenta: CONECTAR. Clique no Pai, depois no Filho."
+    type_select: "<gold>Ferramenta: TIPO. Clique num nó para mudar."
+    delete_select: "<red>Ferramenta: APAGAR."
+    save_success: "<light_purple>Template %id% salvo com sucesso!"
+    node_exists: "<red>Já existe um nó aqui."
+    link_self: "<red>Não pode conectar a si mesmo."
+    link_created: "<green>Link criado: %parent% → %child%"
+    link_removed: "<yellow>Link removido."
+    select_tool: "<gray>Selecione uma ferramenta na barra inferior primeiro."
+    instruction_title: "<yellow><bold>INSTRUÇÃO ATUAL:</bold></yellow>"
+    link_hint: "<aqua>→ Agora clique no Nó Filho (Destino)</aqua>"
+
+command:
+  only_players: "<red>Apenas jogadores."
+  error_load: "<red>Erro: SpellsModule não carregado."
+  usage: "<red>Uso: /spells template edit <id>"
+  list_header: "<gold>Templates Carregados (%count%):"
+  list_item: "<gray>- %id%"
+  help:
+    - "<yellow>Comandos de Template:"
+    - "<gold>/spells template edit <id> <gray>- Abrir o Editor de Matrix"
+    - "<gold>/spells template list <gray>- Listar todos os templates"
+
+help:
+  title: "<gold><bold>Manual do Editor de Matrix"
+  nav:
+    previous: "<yellow>← Página Anterior"
+    next: "<yellow>Próxima Página →"
+    back: "<red>← Voltar ao Editor"
+    back_desc: "<gray>Retornar à edição do template"
+  topics:
+    overview:
+      name: "<yellow><bold>Visão Geral"
+      lore:
+        - "<dark_gray>Introdução ao Sistema"
+        - ""
+        - "<gray>A Matrix de Habilidades é um sistema"
+        - "<gray>de progressão baseado em árvores"
+        - "<gray>onde jogadores desbloqueiam nós"
+        - "<gray>através de dependências."
+        - ""
+        - "<white>Componentes Principais:"
+        - "<green>✔ <gray>Nós (Slots da grid)"
+        - "<green>✔ <gray>Dependências (Links Pai→Filho)"
+        - "<green>✔ <gray>Tipos (Socket/Mutation/Passive)"
+    nodes:
+      name: "<green><bold>Tipos de Nós"
+      lore:
+        - "<dark_gray>Componentes da Matrix"
+        - ""
+        - "<green>● SOCKET <gray>(Esmeralda)"
+        - "<white>  Slot para equipar Runas"
+        - "<white>  Modifica stats da habilidade"
+        - "<white>  Ex: +10% Dano, +2s Duração"
+        - ""
+        - "<light_purple>● MUTATION <gray>(Estrela)"
+        - "<white>  Altera mecânica completamente"
+        - "<white>  Troca skill base por variante"
+        - "<white>  Ex: Bola de Fogo → Meteoro"
+        - ""
+        - "<gray>● PASSIVE <gray>(Livro)"
+        - "<white>  Nó de conexão/caminho"
+        - "<white>  Pode fornecer bônus menores"
+        - "<white>  Usado para estruturar a árvore"
+    tools_create:
+      name: "<green><bold>Ferramenta: Criar"
+      lore:
+        - "<dark_gray>Como adicionar novos nós"
+        - ""
+        - "<white>1. <gray>Clique no ícone <green>Lima Verde"
+        - "<white>2. <gray>Clique em qualquer slot vazio (0-44)"
+        - "<white>3. <gray>Um nó PASSIVE será criado"
+        - ""
+        - "<yellow>Dica: <gray>Crie nós primeiro, conecte depois!"
+        - "<yellow>Dica: <gray>Use o centro (slot 22) como raiz"
+    tools_link:
+      name: "<aqua><bold>Ferramenta: Conectar"
+      lore:
+        - "<dark_gray>Estabelecendo Dependências"
+        - ""
+        - "<white>1. <gray>Clique no ícone <aqua>Barras de Ferro"
+        - "<white>2. <gray>Clique no nó <white>PAI <gray>(requisito)"
+        - "<white>   <dark_gray>O nó brilhará em dourado"
+        - "<white>3. <gray>Clique no nó <aqua>FILHO <gray>(destino)"
+        - ""
+        - "<white>Lógica:"
+        - "<gray>Jogador deve desbloquear o PAI"
+        - "<gray>para ter acesso ao FILHO"
+        - ""
+        - "<yellow>Observação: <gray>Um nó pode ter múltiplos pais!"
+    tools_type:
+      name: "<gold><bold>Ferramenta: Alterar Tipo"
+      lore:
+        - "<dark_gray>Ciclar entre tipos de nó"
+        - ""
+        - "<white>1. <gray>Clique no ícone <gold>Repetidor"
+        - "<white>2. <gray>Clique em qualquer nó existente"
+        - "<white>3. <gray>O tipo será alternado:"
+        - ""
+        - "<gray>   PASSIVE → <green>SOCKET → <light_purple>MUTATION → <gray>..."
+        - ""
+        - "<yellow>Dica: <gray>Organize visualmente:"
+        - "<gray>  - Sockets nas bordas"
+        - "<gray>  - Mutations no topo"
+        - "<gray>  - Passives como caminhos"
+    tools_delete:
+      name: "<red><bold>Ferramenta: Remover"
+      lore:
+        - "<dark_gray>Deletar nós permanentemente"
+        - ""
+        - "<white>1. <gray>Clique no ícone <red>Barreira"
+        - "<white>2. <gray>Clique no nó a ser removido"
+        - "<white>3. <gray>O nó e TODOS os links serão apagados"
+        - ""
+        - "<red><bold>⚠ AVISO:"
+        - "<red>Esta ação NÃO pode ser desfeita!"
+        - "<red>Links de outros nós para este também"
+        - "<red>serão removidos automaticamente."
+    workflow:
+      name: "<light_purple><bold>Fluxo de Trabalho"
+      lore:
+        - "<dark_gray>Passo a passo recomendado"
+        - ""
+        - "<white>1. <gray>Planeje a estrutura no papel"
+        - "<white>2. <gray>Crie o nó raiz (centro)"
+        - "<white>3. <gray>Adicione nós principais"
+        - "<white>4. <gray>Conecte dependências (Pai→Filho)"
+        - "<white>5. <gray>Ajuste tipos conforme função"
+        - "<white>6. <gray>Teste visualmente"
+        - "<white>7. <gray>Salve o template"
+        - ""
+        - "<yellow>Tempo médio: <white>10-15 minutos"
+    examples:
+      name: "<blue><bold>Exemplos de Estrutura"
+      lore:
+        - "<dark_gray>Padrões comuns de design"
+        - ""
+        - "<white>Árvore Linear:"
+        - "<gray>  [Raiz] → [P] → [Socket] → [Mutation]"
+        - ""
+        - "<white>Árvore em Y:"
+        - "<gray>          [Socket]"
+        - "<gray>         ↗"
+        - "<gray>  [Raiz]"
+        - "<gray>         ↘"
+        - "<gray>          [Mutation]"
+        - ""
+        - "<white>Árvore Convergente:"
+        - "<gray>  [P1] ↘      ↙ [P3]"
+        - "<gray>         [Socket]"
+        - "<gray>  [P2] ↗      ↖ [P4]"
+    tips:
+      name: "<yellow><bold>Dicas Avançadas"
+      lore:
+        - "<dark_gray>Otimizações e boas práticas"
+        - ""
+        - "<green>✔ <gray>Use Passives para balancear custo"
+        - "<green>✔ <gray>Mutations devem ser finais (sem filhos)"
+        - "<green>✔ <gray>Sockets ficam bem nas laterais"
+        - "<green>✔ <gray>Evite >3 pais por nó (complexidade)"
+        - "<green>✔ <gray>Nomeie templates de forma clara"
+        - "<green>✔ <gray>Teste in-game antes de produção"
+        - ""
+        - "<white>Nomenclatura sugerida:"
+        - "<gray>  - fire_basic, ice_advanced, etc."
+    shortcuts:
+      name: "<aqua><bold>Atalhos e Info Técnica"
+      lore:
+        - "<dark_gray>Informações do Sistema"
+        - ""
+        - "<white>Slots da Grid: <gray>0-44 <gray>(5 linhas)"
+        - "<white>Slots de Ferramenta: <gray>45-53"
+        - "<white>Arquivo de Saída: <white>/templates/<id>.yml"
+        - ""
+        - "<white>Limites Técnicos:"
+        - "<gray>  - Máximo 45 nós por template"
+        - "<gray>  - Sem limite de links"
+        - "<gray>  - Tipos: 3 (Socket/Mutation/Passive)"
+        - ""
+        - "<yellow>Suporte: <gray>/spells template list"
+
+# ============================================
+# MAIN SPELL GUI - Menu Principal de Magias
+# ============================================
+main_gui:
+  title: "<gold><bold>Habilidades Mágicas"
+  
+  # Sistema de ajuda do menu principal
+  help:
+    title: "<aqua><bold>Ajuda - Sistema de Magias"
+    topics:
+      overview:
+        name: "<yellow><bold>★ Visão Geral"
+        lore:
+          - ""
+          - "<gray>● <white>Descrição:"
+          - "  <gray>Este é o menu principal de magias."
+          - "  <gray>Aqui você configura suas habilidades"
+          - "  <gray>ativas e alterna estilos de conjuração."
+          - ""
+          - "<gray>● <white>Objetivo:"
+          - "  <gray>Equipar feitiços nos slots disponíveis"
+          - "  <gray>para usá-los em combate."
+      
+      modes:
+        name: "<gold><bold>⚔ Modos de Conjuração"
+        lore:
+          - ""
+          - "<green>● SKILLBAR <gray>(Barra de Habilidades)"
+          - "<white>  Feitiços fixos nos slots 1-6"
+          - "<white>  Ative com teclas numéricas"
+          - "<white>  Simples e direto"
+          - ""
+          - "<light_purple>● COMBO <gray>(Sistema de Combos)"
+          - "<white>  Sequências de cliques (LLL, RRL, etc)"
+          - "<white>  Múltiplos feitiços por sequência"
+          - "<white>  Avançado e versátil"
+          - ""
+          - "<yellow>Alterne entre modos clicando"
+          - "<yellow>na Estrela do Nether!"
+      
+      skillbar:
+        name: "<green><bold>★ Modo Skillbar"
+        lore:
+          - ""
+          - "<gray>● <white>Como usar:"
+          - "  <gray>1. Clique em um slot vazio"
+          - "  <gray>2. Selecione um feitiço"
+          - "  <gray>3. Use teclas 1-6 para ativar"
+          - ""
+          - "<gray>● <white>Vantagens:"
+          - "  <green>+ <gray>Acesso rápido e direto"
+          - "  <green>+ <gray>Ideal para iniciantes"
+          - "  <green>+ <gray>Atalhos de teclado simples"
+          - ""
+          - "<yellow>★ Organize seus feitiços mais usados"
+          - "<yellow>   nas primeiras posições!"
+      
+      combo:
+        name: "<light_purple><bold>★ Modo Combo"
+        lore:
+          - ""
+          - "<gray>● <white>Como usar:"
+          - "  <gray>1. Cada slot tem uma sequência"
+          - "  <gray>2. Clique esquerdo (L) e direito (R)"
+          - "  <gray>3. Complete a sequência para ativar"
+          - ""
+          - "<gray>● <white>Exemplo:"
+          - "  <white>Sequência: <yellow>LLL"
+          - "  <gray>Clique esquerdo 3x seguidas"
+          - ""
+          - "<gray>● <white>Vantagens:"
+          - "  <green>+ <gray>Mais feitiços disponíveis"
+          - "  <green>+ <gray>Combos personalizáveis"
+          - "  <green>+ <gray>Estilo de jogo avançado"
+      
+      matrix:
+        name: "<light_purple><bold>✦ Sistema Matrix"
+        lore:
+          - ""
+          - "<gray>A Matrix é uma árvore de talentos"
+          - "<gray>que modifica seus feitiços."
+          - ""
+          - "<gray>● <white>Benefícios:"
+          - "  <green>✔ <gray>Sockets para Runas"
+          - "  <green>✔ <gray>Mutações de habilidades"
+          - "  <green>✔ <gray>Bônus passivos"
+          - ""
+          - "<gray>● <white>Como acessar:"
+          - "  <gray>1. Clique no Heavy Core (centro)"
+          - "  <gray>2. Navegue pela árvore"
+          - "  <gray>3. Desbloqueie nós com pontos"
+          - ""
+          - "<yellow>Matrixes variam por feitiço!"
+      
+      reset:
+        name: "<red><bold>⚠ Reset de Slots"
+        lore:
+          - ""
+          - "<gray>Clique no botão Reset para"
+          - "<red>limpar todos os seus slots"
+          - "<red>de uma vez."
+          - ""
+          - "<red><bold>⚠ AVISO:"
+          - "<red>Esta ação remove TODOS os feitiços"
+          - "<red>equipados em ambos os modos!"
+          - ""
+          - "<gray>Use quando quiser começar uma"
+          - "<gray>nova build do zero."
+      
+      tips:
+        name: "<yellow><bold>★ Dicas e Estratégias"
+        lore:
+          - ""
+          - "<yellow>★ Dica 1: Diversidade"
+          - "  <gray>Equipe feitiços de tipos variados"
+          - "  <gray>(Dano, Cura, Controle, Mobilidade)"
+          - ""
+          - "<yellow>★ Dica 2: Combos"
+          - "  <gray>No modo Combo, memorize as 3"
+          - "  <gray>sequências mais usadas primeiro"
+          - ""
+          - "<yellow>★ Dica 3: Matrix"
+          - "  <gray>Priorize Sockets para runas de"
+          - "  <gray>stats que seu personagem precisa"
+          - ""
+          - "<yellow>★ Dica 4: Situacional"
+          - "  <gray>Troque feitiços antes de bosses"
+          - "  <gray>ou dungeons específicas"
+  
+  # Botões do menu principal
+  buttons:
+    info:
+      name: "<aqua><bold>ℹ Informações"
+      lore:
+        - ""
+        - "<gray>Este menu permite equipar"
+        - "<gray>feitiços nos slots disponíveis."
+        - ""
+        - "<gray>● <white>Clique em um slot para:"
+        - "  <gray>Selecionar um feitiço"
+        - ""
+        - "<gray>● <white>Use o botão de Estilo para:"
+        - "  <gray>Alternar entre Skillbar e Combo"
+        - ""
+        - "<green>✔ Clique no ícone de Ajuda abaixo"
+        - "<green>  para o manual completo!"
+    
+    style_skillbar:
+      name: "<green><bold>Modo: SKILLBAR"
+      lore:
+        - ""
+        - "<gray>Modo Atual: <green>Skillbar"
+        - ""
+        - "<gray>Seus feitiços estão equipados"
+        - "<gray>nos slots 1-6 da hotbar."
+        - ""
+        - "<gray>● <white>Para usar:"
+        - "  <gray>Pressione teclas <white>1-6 <gray>no teclado"
+        - ""
+        - "<yellow>✔ Clique para alternar para <light_purple>Combo"
+    
+    style_combo:
+      name: "<light_purple><bold>Modo: COMBO"
+      lore:
+        - ""
+        - "<gray>Modo Atual: <light_purple>Combo"
+        - ""
+        - "<gray>Seus feitiços são ativados por"
+        - "<gray>sequências de cliques específicas."
+        - ""
+        - "<gray>● <white>Para usar:"
+        - "  <gray>Clique <white>Esquerdo (L) <gray>ou <white>Direito (R)"
+        - "  <gray>conforme a sequência do slot"
+        - ""
+        - "<yellow>✔ Clique para alternar para <green>Skillbar"
+    
+    reset:
+      name: "<red><bold>⚠ Resetar Slots"
+      lore:
+        - ""
+        - "<gray>Remove TODOS os feitiços"
+        - "<gray>equipados em ambos os modos."
+        - ""
+        - "<red><bold>AVISO: Não pode ser desfeito!"
+        - ""
+        - "<red>✖ Clique para resetar"
+    
+    matrix:
+      name: "<light_purple><bold>✦ Matrix de Talentos"
+      lore:
+        - ""
+        - "<gray>A Matrix é uma árvore de"
+        - "<gray>customização de feitiços."
+        - ""
+        - "<gray>● <white>Recursos:"
+        - "  <green>✔ <gray>Sockets para Runas"
+        - "  <green>✔ <gray>Mutações de mecânica"
+        - "  <green>✔ <gray>Bônus passivos"
+        - ""
+        - "<light_purple>✔ Clique para abrir"
+    
+    help:
+      name: "<aqua><bold>? Ajuda"
+      lore:
+        - ""
+        - "<gray>Clique para abrir o menu de ajuda"
+        - "<gray>e aprender sobre o sistema de magias."
+        - ""
+        - "<gray>Tópicos disponíveis:"
+        - "  <yellow>★ <gray>Visão Geral"
+        - "  <yellow>★ <gray>Modos de Conjuração"
+        - "  <yellow>★ <gray>Sistema Matrix"
+        - "  <yellow>★ <gray>Dicas e Estratégias"
+    
+    # Slots de feitiços (Skillbar)
+    slot_empty:
+      name: "<gray>Slot %slot%: <dark_gray>Vazio"
+      lore:
+        - ""
+        - "<gray>Nenhum feitiço equipado"
+        - "<gray>neste slot."
+        - ""
+        - "<green>✔ Clique para selecionar um feitiço"
+    
+    slot_filled:
+      name: "<green>Slot %slot%: <white>%spell_name%"
+      lore:
+        - ""
+        - "<gray>Feitiço: <white>%spell_name%"
+        - "<gray>Ativação: <white>Tecla <yellow>%slot%"
+        - ""
+        - "<green>✔ Clique para trocar de feitiço"
+    
+    slot_invalid:
+      name: "<red>Slot %slot%: <dark_red>ERRO"
+      lore:
+        - ""
+        - "<red>Feitiço inválido: <white>%spell_id%"
+        - ""
+        - "<gray>Este feitiço não existe ou"
+        - "<gray>foi removido do servidor."
+        - ""
+        - "<red>✖ Clique para selecionar outro"
+    
+    # Slots de combo
+    combo_empty:
+      name: "<gray>Combo %slot%: <dark_gray>Vazio"
+      lore:
+        - ""
+        - "<gray>Sequência: <yellow>%sequence%"
+        - "<gray>Feitiço: <dark_gray>Nenhum"
+        - ""
+        - "<gray>● <white>Como usar:"
+        - "  <gray>Clique <white>Esquerdo (L) <gray>e <white>Direito (R)"
+        - "  <gray>na ordem da sequência"
+        - ""
+        - "<green>✔ Clique para selecionar um feitiço"
+    
+    combo_filled:
+      name: "<light_purple>Combo %slot%: <white>%spell_name%"
+      lore:
+        - ""
+        - "<gray>Sequência: <yellow>%sequence%"
+        - "<gray>Feitiço: <white>%spell_name%"
+        - ""
+        - "<gray>● <white>Para ativar:"
+        - "  <gray>Execute a sequência <yellow>%sequence%"
+        - "  <gray>L = Clique Esquerdo"
+        - "  <gray>R = Clique Direito"
+        - ""
+        - "<green>✔ Clique para trocar de feitiço"
+    
+    combo_invalid:
+      name: "<red>Combo %slot%: <dark_red>ERRO"
+      lore:
+        - ""
+        - "<gray>Sequência: <yellow>%sequence%"
+        - "<red>Feitiço inválido: <white>%spell_id%"
+        - ""
+        - "<gray>Este feitiço não existe ou"
+        - "<gray>foi removido do servidor."
+        - ""
+        - "<red>✖ Clique para selecionar outro"
+  
+  # Mensagens de feedback
+  messages:
+    mode_changed_skillbar: "<green>✔ Modo alterado para: <white>SKILLBAR"
+    mode_changed_combo: "<light_purple>✔ Modo alterado para: <white>COMBO"
+    reset_success: "<green>✔ Todos os slots foram resetados!"
+    reset_confirm: "<red>⚠ Tem certeza? Todos os feitiços serão removidos!"
+
+# ============================================
+# SPELL MATRIX GUI - Árvore de Talentos
+# ============================================
+matrix_gui:
+  title: "<light_purple><bold>Matrix: %spell_name%"
+  
+  # Sistema de ajuda da matrix
+  help:
+    title: "<aqua><bold>Ajuda - Matrix de Talentos"
+    topics:
+      overview:
+        name: "<yellow><bold>★ O que é a Matrix?"
+        lore:
+          - ""
+          - "<gray>● <white>Descrição:"
+          - "  <gray>A Matrix é uma árvore de progressão"
+          - "  <gray>que modifica e aprimora feitiços."
+          - ""
+          - "<gray>● <white>Componentes:"
+          - "  <light_purple>✦ <white>Mutações - Alteram mecânica"
+          - "  <green>✔ <white>Sockets - Slots para Runas"
+          - "  <gray>○ <white>Conectores - Caminhos visuais"
+          - ""
+          - "<gray>● <white>Objetivo:"
+          - "  <gray>Desbloquear nós e customizar"
+          - "  <gray>seu feitiço conforme seu estilo."
+      
+      nodes:
+        name: "<light_purple><bold>✦ Tipos de Nós"
+        lore:
+          - ""
+          - "<light_purple>● MUTATION <gray>(Mutação)"
+          - "<white>  Altera completamente a mecânica"
+          - "<white>  do feitiço base."
+          - ""
+          - "<white>  Exemplos:"
+          - "  <gray>- Bola de Fogo → Meteoro"
+          - "  <gray>- Cura Simples → Cura em Área"
+          - "  <gray>- Dash Linear → Teleporte"
+          - ""
+          - "<green>● SOCKET <gray>(Engaste)"
+          - "<white>  Slot para equipar Runas que"
+          - "<white>  modificam stats do feitiço."
+          - ""
+          - "<white>  Exemplos:"
+          - "  <gray>- +10% Dano"
+          - "  <gray>- +2s Duração"
+          - "  <gray>- -20% Custo de Mana"
+      
+      unlocking:
+        name: "<gold><bold>🔓 Desbloqueando Nós"
+        lore:
+          - ""
+          - "<gray>● <white>Sistema de Dependências:"
+          - "  <gray>Nós têm pais (requisitos)"
+          - "  <gray>que devem ser ativados primeiro."
+          - ""
+          - "<gray>● <white>Fluxo:"
+          - "  <gray>1. Nó ROOT sempre desbloqueado"
+          - "  <gray>2. Clique em Mutações para ativar"
+          - "  <gray>3. Sockets ficam disponíveis"
+          - "  <gray>4. Equipe runas nos sockets"
+          - ""
+          - "<gray>● <white>Estado dos Nós:"
+          - "  <dark_gray>○ <gray>Bloqueado (cinza)"
+          - "  <yellow>○ <gray>Disponível (amarelo)"
+          - "  <green>● <gray>Ativo (verde + glow)"
+      
+      mutations:
+        name: "<light_purple><bold>✦ Sistema de Mutações"
+        lore:
+          - ""
+          - "<gray>Mutações são escolhas semi-permanentes"
+          - "<gray>que alteram a mecânica do feitiço."
+          - ""
+          - "<gray>● <white>Como ativar:"
+          - "  <gray>1. Clique em uma Mutação disponível"
+          - "  <gray>2. O nó ficará verde e brilhante"
+          - "  <gray>3. O feitiço muda imediatamente"
+          - ""
+          - "<gray>● <white>Desativar:"
+          - "  <gray>Clique novamente na Mutação ativa"
+          - "  <gray>Requer que nós filhos estejam inativos"
+          - ""
+          - "<yellow>★ Planeje sua build! Mutações"
+          - "<yellow>   afetam profundamente o gameplay."
+      
+      sockets:
+        name: "<green><bold>✦ Sistema de Sockets"
+        lore:
+          - ""
+          - "<gray>Sockets são slots para equipar Runas."
+          - ""
+          - "<gray>● <white>Como usar:"
+          - "  <gray>1. Obtenha Runas (drops/craft)"
+          - "  <gray>2. Clique no Socket desejado"
+          - "  <gray>3. Clique com a Runa na mão"
+          - "  <gray>4. A Runa será consumida"
+          - ""
+          - "<gray>● <white>Remover Runa:"
+          - "  <gray>Clique no Socket preenchido"
+          - "  <gray>A Runa volta ao inventário"
+          - ""
+          - "<gray>● <white>Tipos de Runas:"
+          - "  <green>✔ <gray>Dano, Alcance, Duração"
+          - "  <green>✔ <gray>Custo, Cooldown, Velocidade"
+          - "  <green>✔ <gray>Efeitos especiais"
+      
+      strategy:
+        name: "<gold><bold>★ Estratégias de Build"
+        lore:
+          - ""
+          - "<white>Build Ofensiva:"
+          - "  <gray>- Priorize Mutações de dano"
+          - "  <gray>- Runas: +Dano, -Cooldown"
+          - "  <gray>- Bom para DPS/Burst"
+          - ""
+          - "<white>Build Utilitária:"
+          - "  <gray>- Mutações de controle/suporte"
+          - "  <gray>- Runas: +Duração, +Alcance"
+          - "  <gray>- Bom para grupo/suporte"
+          - ""
+          - "<white>Build Eficiente:"
+          - "  <gray>- Mutações passivas"
+          - "  <gray>- Runas: -Custo, -Cooldown"
+          - "  <gray>- Bom para farm/sustain"
+      
+      tips:
+        name: "<yellow><bold>★ Dicas Avançadas"
+        lore:
+          - ""
+          - "<yellow>★ Dica 1: Sinergia"
+          - "  <gray>Combine Mutações e Runas"
+          - "  <gray>que funcionam juntas"
+          - ""
+          - "<yellow>★ Dica 2: Experimentação"
+          - "  <gray>Você pode resetar Mutações"
+          - "  <gray>Teste diferentes builds!"
+          - ""
+          - "<yellow>★ Dica 3: Situacional"
+          - "  <gray>Troque builds antes de"
+          - "  <gray>dungeons ou bosses específicos"
+          - ""
+          - "<yellow>★ Dica 4: Runas Raras"
+          - "  <gray>Algumas Runas são muito raras"
+          - "  <gray>Use-as em feitiços principais"
+  
+  # Estados dos nós
+  nodes:
+    locked:
+      name: "<dark_gray>🔒 Bloqueado"
+      lore:
+        - ""
+        - "<gray>Este nó está bloqueado."
+        - ""
+        - "<gray>● <white>Requisitos:"
+        - "  <gray>Ative os nós pais primeiro"
+    
+    root:
+      name: "<light_purple><bold>✦ %node_name%"
+      lore:
+        - "<dark_gray>ROOT - Nó Raiz"
+        - ""
+        - "<green>Este é o ponto de partida"
+        - "<green>de todas as progressões."
+        - ""
+        - "<gray>Sempre ativo e desbloqueado."
+    
+    mutation_available:
+      name: "<yellow>%node_name%"
+      lore:
+        - "<dark_gray>MUTATION - Disponível"
+        - ""
+        - "<gray>● <white>Descrição:"
+        - "  <gray>%description%"
+        - ""
+        - "<gray>● <white>Efeito:"
+        - "  <gray>Muda a mecânica do feitiço"
+        - ""
+        - "<green>✔ Clique para ativar esta mutação"
+    
+    mutation_active:
+      name: "<green><bold>✔ %node_name%"
+      lore:
+        - "<dark_gray>MUTATION - Ativa"
+        - ""
+        - "<green>Esta mutação está ativa!"
+        - "<green>O feitiço usa esta variante."
+        - ""
+        - "<gray>● <white>Descrição:"
+        - "  <gray>%description%"
+        - ""
+        - "<yellow>✖ Clique para desativar"
+    
+    socket_empty:
+      name: "<gray>✦ Engaste Vazio"
+      lore:
+        - "<dark_gray>SOCKET - Vazio"
+        - ""
+        - "<gray>Este socket pode receber uma Runa."
+        - ""
+        - "<gray>● <white>Como usar:"
+        - "  <gray>1. Segure uma Runa"
+        - "  <gray>2. Clique neste socket"
+        - ""
+        - "<green>✔ Clique com Runa para equipar"
+    
+    socket_filled:
+      name: "<aqua><bold>✦ %rune_name%"
+      stat_format: "  <gray>%key%: <white>%value%"
+      lore:
+        - "<dark_gray>SOCKET - Equipado"
+        - ""
+        - "<gray>Runa: <aqua>%rune_name%"
+        - ""
+        - "<gray>● <white>Bônus:"
+        - "%rune_stats%"
+        - ""
+        - "<yellow>✖ Clique para remover"
+    
+    connector:
+      name: " "
+      lore: []
+  
+  # Botões de controle
+  buttons:
+    back:
+      name: "<red><bold>← Voltar"
+      lore:
+        - ""
+        - "<gray>Retornar ao menu de seleção"
+        - "<gray>de matrizes."
+    
+    info:
+      name: "<aqua><bold>ℹ Informação"
+      lore:
+        - ""
+        - "<gray>Este é o sistema Matrix de"
+        - "<gray>customização de feitiços."
+        - ""
+        - "<gray>● <white>Clique em:"
+        - "  <light_purple>✦ <gray>Mutações para ativar"
+        - "  <green>✔ <gray>Sockets para equipar Runas"
+        - ""
+        - "<green>✔ Clique no ícone de Ajuda"
+        - "<green>  para o guia completo!"
+    
+    help:
+      name: "<aqua><bold>? Ajuda"
+      lore:
+        - ""
+        - "<gray>Clique para abrir o guia"
+        - "<gray>completo da Matrix de Talentos."
+        - ""
+        - "<gray>Aprenda sobre:"
+        - "  <yellow>★ <gray>Mutações e Sockets"
+        - "  <yellow>★ <gray>Como desbloquear nós"
+        - "  <yellow>★ <gray>Estratégias de build"
+    
+    reset:
+      name: "<red><bold>⚠ Resetar Matrix"
+      lore:
+        - ""
+        - "<gray>Remove TODAS as mutações ativas"
+        - "<gray>e esvazia TODOS os sockets."
+        - ""
+        - "<red><bold>AVISO: Não pode ser desfeito!"
+        - "<red>Runas retornam ao inventário."
+        - ""
+        - "<red>✖ Clique para resetar tudo"
+  
+  # Mensagens de feedback
+  messages:
+    node_locked: "<red>🔒 Este nó está bloqueado! Ative os nós pais primeiro."
+    mutation_activated: "<green>✔ Mutação ativada: <white>%node_name%"
+    mutation_deactivated: "<yellow>✖ Mutação desativada: <white>%node_name%"
+    socket_equipped: "<green>✔ Runa equipada: <aqua>%rune_name%"
+    socket_removed: "<yellow>✖ Runa removida: <aqua>%rune_name%"
+    invalid_rune: "<red>✖ Isso não é uma Runa válida!"
+    inventory_full: "<red>✖ Inventário cheio! Não foi possível remover a Runa."
+    matrix_reset: "<green>✔ Matrix resetada! Todas as mutações foram desativadas."
+    rune_error: "<red>Erro de Runa"
+    rune_invalid_id: "<gray>ID inválida: %id%"
+
+# ============================================
+# SPELL SELECTOR GUI - Seleção de Feitiços
+# ============================================
+selector_gui:
+  title: "<dark_gray>Matrix: <light_purple>Selecione o Feitiço</light_purple></dark_gray>"
+  
+  # Tópicos de ajuda
+  help:
+    overview:
+      name: "<light_purple><bold>✦ Visão Geral"
+      lore:
+        - ""
+        - "<gray>Aqui você pode visualizar e"
+        - "<gray>acessar a <light_purple>Matrix de Talentos"
+        - "<gray>de qualquer feitiço disponível."
+        - ""
+        - "<gray>Selecione um feitiço para:"
+        - "  <yellow>★ <gray>Ver sua árvore de mutações"
+        - "  <yellow>★ <gray>Ativar/desativar mutações"
+        - "  <yellow>★ <gray>Equipar runas em sockets"
+        - "  <yellow>★ <gray>Customizar sua build"
+    
+    navigation:
+      name: "<aqua><bold>↔ Navegação"
+      lore:
+        - ""
+        - "<gray>● <white>Clique em um feitiço"
+        - "  <gray>para abrir sua Matrix"
+        - ""
+        - "<gray>● <white>Botão Voltar (<red>Seta<gray>)"
+        - "  <gray>retorna ao menu principal"
+        - ""
+        - "<gray>● <white>Botão Ajuda (<aqua>?<gray>)"
+        - "  <gray>abre este guia"
+    
+    spells:
+      name: "<yellow><bold>★ Sobre Feitiços"
+      lore:
+        - ""
+        - "<gray>Cada feitiço possui uma"
+        - "<gray><light_purple>Matrix de Talentos<gray> única,"
+        - "<gray>com mutações exclusivas."
+        - ""
+        - "<gray>Exemplos:"
+        - "  <blue>● <white>Fireball: <gray>Poder vs Controle"
+        - "  <aqua>● <white>Ice Storm: <gray>Área vs Slow"
+        - "  <green>● <white>Heal: <gray>HoT vs Burst"
+    
+    progression:
+      name: "<green><bold>↑ Progressão"
+      lore:
+        - ""
+        - "<gray>Desbloqueie mutações ao:"
+        - "  <yellow>★ <gray>Ativar nós pais"
+        - "  <yellow>★ <gray>Seguir caminhos na árvore"
+        - "  <yellow>★ <gray>Escolher especializações"
+        - ""
+        - "<gray>Cada escolha molda o"
+        - "<gray>comportamento do feitiço!"
+    
+    tips:
+      name: "<gold><bold>★ Dicas"
+      lore:
+        - ""
+        - "<yellow>★ <gray>Teste diferentes builds"
+        - "  <gray>para encontrar seu estilo"
+        - ""
+        - "<yellow>★ <gray>Use o botão Reset na Matrix"
+        - "  <gray>para refazer escolhas"
+        - ""
+        - "<yellow>★ <gray>Runas potencializam mutações"
+        - "  <gray>- procure-as no mundo!"
+  
+  # Items do menu
+  spell_icon:
+    name: "<light_purple>%spell_name%"
+    lore:
+      - ""
+      - "<gray>ID: <white>%spell_id%"
+      - ""
+      - "<gray>● <white>Árvore de Talentos"
+      - "  <gray>Customize este feitiço com"
+      - "  <gray>mutações e runas especiais"
+      - ""
+      - "<gray>Progressão:"
+      - "  <yellow>★ <gray>Nós: <white>%unlocked_nodes%<gray>/<white>%total_nodes%"
+      - "  <green>✔ <gray>Mutações: <white>%active_mutations%"
+      - "  <aqua>✦ <gray>Sockets: <white>%filled_sockets%<gray>/<white>%total_sockets%"
+      - ""
+      - "<green>✔ Clique para editar"
+  
+  buttons:
+    back:
+      name: "<red><bold>← Voltar"
+      lore:
+        - ""
+        - "<gray>Retornar ao menu principal"
+        - "<gray>de gerenciamento de feitiços."
+    
+    help:
+      name: "<aqua><bold>? Ajuda"
+      lore:
+        - ""
+        - "<gray>Clique para abrir o guia"
+        - "<gray>completo do Seletor de Matrix."
+        - ""
+        - "<gray>Aprenda sobre:"
+        - "  <yellow>★ <gray>Como navegar"
+        - "  <yellow>★ <gray>Sobre as Matrizes"
+        - "  <yellow>★ <gray>Sistema de progressão"
+  
+  # Mensagens de feedback
+  messages:
+    spell_selected: "<green>✔ Abrindo Matrix de: <white>%spell_name%"
+    no_spells: "<red>✖ Nenhum feitiço disponível no momento."
+
+gui:
+  spell_selection:
+    title: '<green>Selecionar Feitiço'
+    items:
+      click_to_equip: '<yellow>Clique para equipar'
+    buttons:
+      back:
+        name: '<red>Voltar'
+        lore:
+          - '<gray>Voltar ao menu principal'
+      unequip:
+        name: '<red>Desequipar Slot'
+        lore:
+          - '<gray>Clique para limpar este slot'
+    messages:
+      equipped_skillbar: '<green>Feitiço %spell% <green>equipado no slot %slot%'
+      equipped_combo: '<green>Feitiço %spell% <green>vinculado ao combo %slot%'
+      unequipped_skillbar: '<green>Slot %slot% da SkillBar limpo.'
+      unequipped_combo: '<green>Slot de Combo %slot% limpo.'
+
+casting:
+  mode_enabled: "<green>✔ Modo de Conjuração Ativado!"
+  mode_disabled: "<yellow>⚠ Modo de Conjuração Desativado."
+  spell_cast: "<green>✔ Você lançou <yellow>%spell%</yellow>!"
+  on_cooldown: "<red>✖ Aguarde %time%s para usar isso novamente."
+
+# ============================================
+# COMMANDS
+# ============================================
+commands:
+  usage_matrix: "<red>Uso: /spell matrix"
+  usage_bind: "<red>Uso: /spell bind <spell> <slot>"
+  spell_bound: "<green>✔ Feitiço %spell% vinculado ao slot %slot%!"
+  usage_combo: "<red>Uso: /spell combo <spell> <sequence>"
+  combo_bound: "<green>✔ Feitiço %spell% vinculado ao combo %combo%!"
+
+# ============================================
+# ERRORS
+# ============================================
+errors:
+  no_permission: "<red>✖ Você não tem permissão!"
+  spell_not_found: "<red>✖ Feitiço não encontrado: %spell%"
+  profile_not_loaded: "<red>✖ Seu perfil não foi carregado!"
+  invalid_slot: "<red>✖ Slot inválido!"
+  config_error: "<red>✖ Erro de configuração na habilidade!"
+  system_error: "<red>✖ Ocorreu um erro interno no sistema de feitiços."
+
+

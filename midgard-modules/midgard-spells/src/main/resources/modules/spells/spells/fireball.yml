@@ -1,0 +1,38 @@
+name: "<red>Fireball</red>"
+mythic-skill: "Fireball"
+cooldown: 5.0
+mana: 10.0
+stamina: 0.0
+lore:
+  - "<gray>Lança uma bola de fogo.</gray>"
+  - "<gray>Dano explosivo.</gray>"
+
+matrix:
+  root:
+    type: ROOT
+    slot: 22
+    display-name: "Início"
+    icon: BEACON
+    model-data: 0
+  
+  node1:
+    type: CONNECTOR
+    slot: 23
+    parents: [22]
+    icon: RED_STAINED_GLASS_PANE
+    
+  socket1:
+    type: SOCKET
+    slot: 24
+    parents: [23]
+    display-name: "Engaste de Dano"
+    
+  mutation_explosive:
+    type: MUTATION
+    slot: 25
+    parents: [24]
+    display-name: "Mutação: Explosão Instável"
+    icon: TNT
+    mutation-id: "Explosion"
+    model-data: 1001
+

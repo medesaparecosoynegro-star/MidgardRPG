@@ -1,0 +1,2 @@
+stack_occupied: "<red>Não é possível equipar de um pack quando o slot está ocupado."
+invalid_slot: "<red>Slot de equipamento inválido configurado: %s"

@@ -1,0 +1,295 @@
+# Atributos Principais
+max_health:
+  name: "<red>Vida Máxima"
+  lore:
+    - "<gray>Aumenta a quantidade máxima de vida."
+    - "<gray>Essencial para sobrevivência."
+health_regen:
+  name: "<red>Regeneração de Vida"
+  lore:
+    - "<gray>Recupera vida periodicamente."
+    - "<gray>Valor por segundo."
+max_mana:
+  name: "<blue>Mana Máxima"
+  lore:
+    - "<gray>Aumenta a reserva de energia mágica."
+    - "<gray>Usada para lançar feitiços."
+mana_regen:
+  name: "<blue>Regeneração de Mana"
+  lore:
+    - "<gray>Recupera mana periodicamente."
+    - "<gray>Valor por segundo."
+max_stamina:
+  name: "<yellow>Estamina Máxima"
+  lore:
+    - "<gray>Aumenta a energia física."
+    - "<gray>Usada para correr e usar habilidades físicas."
+stamina_regen:
+  name: "<yellow>Regeneração de Estamina"
+  lore:
+    - "<gray>Recupera estamina periodicamente."
+    - "<gray>Valor por segundo."
+
+# Atributos Primários
+strength:
+  name: "<dark_red>Força"
+  lore:
+    - "<gray>Aumenta o dano físico e a capacidade de carga."
+intelligence:
+  name: "<aqua>Inteligência"
+  lore:
+    - "<gray>Aumenta o dano mágico e a mana máxima."
+dexterity:
+  name: "<green>Destreza"
+  lore:
+    - "<gray>Aumenta a chance de crítico e a precisão."
+defense:
+  name: "<dark_gray>Defesa"
+  lore:
+    - "<gray>Reduz o dano físico recebido."
+
+# Atributos Ofensivos
+physical_damage:
+  name: "<dark_red>Dano Físico"
+  lore:
+    - "<gray>Dano causado por ataques básicos e habilidades físicas."
+magic_damage:
+  name: "<aqua>Dano Mágico"
+  lore:
+    - "<gray>Dano causado por feitiços e habilidades mágicas."
+critical_chance:
+  name: "<red>Chance Crítica"
+  lore:
+    - "<gray>Probabilidade de causar dano extra."
+critical_damage:
+  name: "<red>Dano Crítico"
+  lore:
+    - "<gray>Multiplicador de dano ao acertar um crítico."
+armor_penetration:
+  name: "<gold>Penetração de Armadura"
+  lore:
+    - "<gray>Ignora uma porcentagem da armadura do alvo."
+armor_penetration_flat:
+  name: "<gold>Penetração de Armadura (Fixa)"
+  lore:
+    - "<gray>Ignora um valor fixo da armadura do alvo."
+magic_penetration:
+  name: "<light_purple>Penetração Mágica"
+  lore:
+    - "<gray>Ignora uma porcentagem da resistência mágica do alvo."
+magic_penetration_flat:
+  name: "<light_purple>Penetração Mágica (Fixa)"
+  lore:
+    - "<gray>Ignora um valor fixo da resistência mágica do alvo."
+accuracy:
+  name: "<yellow>Precisão"
+  lore:
+    - "<gray>Aumenta a chance de acertar o alvo."
+attack_speed:
+  name: "<yellow>Velocidade de Ataque"
+  lore:
+    - "<gray>Aumenta a frequência dos ataques."
+weapon_damage:
+  name: "<gray>Dano da Arma"
+  lore:
+    - "<gray>Dano base da arma equipada."
+skill_damage:
+  name: "<dark_aqua>Dano de Habilidade"
+  lore:
+    - "<gray>Aumenta o dano de todas as habilidades."
+projectile_damage:
+  name: "<gray>Dano de Projétil"
+  lore:
+    - "<gray>Aumenta o dano de flechas e projéteis."
+undead_damage:
+  name: "<dark_green>Dano contra Mortos-Vivos"
+  lore:
+    - "<gray>Dano extra contra zumbis, esqueletos, etc."
+skill_critical_chance:
+  name: "<dark_aqua>Chance Crítica de Habilidade"
+  lore:
+    - "<gray>Chance de habilidades causarem dano crítico."
+skill_critical_damage:
+  name: "<dark_aqua>Dano Crítico de Habilidade"
+  lore:
+    - "<gray>Dano extra em críticos de habilidade."
+
+# Atributos Defensivos
+armor:
+  name: "<gray>Armadura"
+  lore:
+    - "<gray>Reduz o dano físico recebido."
+armor_toughness:
+  name: "<dark_gray>Resistência de Armadura"
+  lore:
+    - "<gray>Reduz a eficácia da penetração de armadura inimiga."
+magic_resistance:
+  name: "<light_purple>Resistência Mágica"
+  lore:
+    - "<gray>Reduz o dano mágico recebido."
+critical_resistance:
+  name: "<gray>Resistência Crítica"
+  lore:
+    - "<gray>Reduz a chance de receber acertos críticos."
+block_power:
+  name: "<gold>Poder de Bloqueio"
+  lore:
+    - "<gray>Quantidade de dano absorvido ao bloquear."
+block_rating:
+  name: "<gold>Chance de Bloqueio"
+  lore:
+    - "<gray>Chance de bloquear um ataque."
+dodge_rating:
+  name: "<green>Chance de Esquiva"
+  lore:
+    - "<gray>Chance de evitar completamente um ataque."
+parry_rating:
+  name: "<yellow>Chance de Aparar"
+  lore:
+    - "<gray>Chance de aparar um ataque e contra-atacar."
+damage_reduction:
+  name: "<dark_gray>Redução de Dano"
+  lore:
+    - "<gray>Reduz todo o dano recebido em porcentagem."
+fall_damage_reduction:
+  name: "<gray>Redução de Dano de Queda"
+  lore:
+    - "<gray>Reduz o dano recebido ao cair."
+projectile_damage_reduction:
+  name: "<gray>Redução de Dano de Projétil"
+  lore:
+    - "<gray>Reduz o dano recebido de projéteis."
+physical_damage_reduction:
+  name: "<dark_red>Redução de Dano Físico"
+  lore:
+    - "<gray>Reduz o dano físico recebido."
+magic_damage_reduction:
+  name: "<aqua>Redução de Dano Mágico"
+  lore:
+    - "<gray>Reduz o dano mágico recebido."
+pve_damage_reduction:
+  name: "<dark_green>Redução de Dano PvE"
+  lore:
+    - "<gray>Reduz o dano recebido de monstros."
+pvp_damage_reduction:
+  name: "<red>Redução de Dano PvP"
+  lore:
+    - "<gray>Reduz o dano recebido de jogadores."
+knockback_resistance:
+  name: "<dark_gray>Resistência a Repulsão"
+  lore:
+    - "<gray>Reduz o empurrão recebido de ataques."
+thorns:
+  name: "<dark_green>Espinhos"
+  lore:
+    - "<gray>Reflete parte do dano recebido de volta ao atacante."
+
+# Atributos Utilitários
+speed:
+  name: "<white>Velocidade"
+  lore:
+    - "<gray>Aumenta a velocidade de movimento."
+luck:
+  name: "<green>Sorte"
+  lore:
+    - "<gray>Aumenta a chance de drops raros."
+cooldown_reduction:
+  name: "<aqua>Redução de Recarga"
+  lore:
+    - "<gray>Reduz o tempo de espera das habilidades."
+life_steal:
+  name: "<red>Roubo de Vida"
+  lore:
+    - "<gray>Cura uma porcentagem do dano causado."
+spell_vampirism:
+  name: "<light_purple>Vampirismo Mágico"
+  lore:
+    - "<gray>Cura uma porcentagem do dano mágico causado."
+block_cooldown_reduction:
+  name: "<gold>Redução de Recarga de Bloqueio"
+  lore:
+    - "<gray>Reduz o tempo de espera do bloqueio."
+dodge_cooldown_reduction:
+  name: "<green>Redução de Recarga de Esquiva"
+  lore:
+    - "<gray>Reduz o tempo de espera da esquiva."
+parry_cooldown_reduction:
+  name: "<yellow>Redução de Recarga de Aparar"
+  lore:
+    - "<gray>Reduz o tempo de espera do aparar."
+
+# Amplificadores e Limites
+health_regen_amp:
+  name: "<red>Amplificador de Regen. Vida"
+  lore:
+    - "<gray>Aumenta a eficácia da regeneração de vida."
+mana_regen_amp:
+  name: "<blue>Amplificador de Regen. Mana"
+  lore:
+    - "<gray>Aumenta a eficácia da regeneração de mana."
+stamina_regen_amp:
+  name: "<yellow>Amplificador de Regen. Estamina"
+  lore:
+    - "<gray>Aumenta a eficácia da regeneração de estamina."
+max_health_regen:
+  name: "<red>Limite de Regen. Vida"
+  lore:
+    - "<gray>Valor máximo de regeneração de vida por segundo."
+max_mana_regen:
+  name: "<blue>Limite de Regen. Mana"
+  lore:
+    - "<gray>Valor máximo de regeneração de mana por segundo."
+max_stamina_regen:
+  name: "<yellow>Limite de Regen. Estamina"
+  lore:
+    - "<gray>Valor máximo de regeneração de estamina por segundo."
+max_stellium:
+  name: "<dark_purple>Stellium Máximo"
+  lore:
+    - "<gray>Recurso especial para habilidades avançadas."
+max_absorption:
+  name: "<gold>Absorção Máxima"
+  lore:
+    - "<gray>Limite de escudo de absorção."
+
+# Elementais
+fire_damage:
+  name: "<gold>Dano de Fogo"
+  lore:
+    - "<gray>Aumenta o dano causado por fogo."
+ice_damage:
+  name: "<aqua>Dano de Gelo"
+  lore:
+    - "<gray>Aumenta o dano causado por gelo."
+light_damage:
+  name: "<yellow>Dano de Luz"
+  lore:
+    - "<gray>Aumenta o dano causado por luz."
+darkness_damage:
+  name: "<dark_gray>Dano de Trevas"
+  lore:
+    - "<gray>Aumenta o dano causado por trevas."
+divine_damage:
+  name: "<gold>Dano Divino"
+  lore:
+    - "<gray>Aumenta o dano sagrado."
+fire_defense:
+  name: "<gold>Resistência a Fogo"
+  lore:
+    - "<gray>Reduz o dano de fogo recebido."
+ice_defense:
+  name: "<aqua>Resistência a Gelo"
+  lore:
+    - "<gray>Reduz o dano de gelo recebido."
+light_defense:
+  name: "<yellow>Resistência a Luz"
+  lore:
+    - "<gray>Reduz o dano de luz recebido."
+darkness_defense:
+  name: "<dark_gray>Resistência a Trevas"
+  lore:
+    - "<gray>Reduz o dano de trevas recebido."
+divine_defense:
+  name: "<gold>Resistência Divina"
+  lore:
+    - "<gray>Reduz o dano sagrado recebido."

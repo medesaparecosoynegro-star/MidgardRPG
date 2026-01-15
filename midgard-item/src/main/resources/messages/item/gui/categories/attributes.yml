@@ -1,0 +1,189 @@
+stats:
+  display_name:
+    name: '<green>Display Name'
+    lore:
+      - '<gray>The item display name.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  material:
+    name: '<green>Material'
+    lore:
+      - '<gray>The material of your item.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  tier:
+    name: '<green>Item Tier'
+    lore:
+      - '<gray>The item tier (rarity).'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  nbt_tags:
+    name: '<green>NBT Tags'
+    lore:
+      - '<gray>Custom NBT Tags.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Click to add a tag.'
+      - '<yellow>» Right-Click to remove last tag.'
+  lore:
+    name: '<green>Lore'
+    lore:
+      - '<gray>The item lore.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Click to add a line.'
+      - '<yellow>» Right-Click to remove last line.'
+  custom_model_data:
+    name: '<green>Custom Model Data'
+    lore:
+      - '<gray>Your 1.14+ integer custom model data.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  max_stack_size:
+    name: '<green>Max Stack Size'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>Top amount of items that'
+      - '<gray>can be stacked (1.20.5+).'
+      - '<gray>Max value is 99.'
+      - ''
+      - '<gray>Current Value: <green>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  hide_durability_bar:
+    name: '<green>Hide Durability Bar'
+    lore:
+      - '<gray>Enable this to have the green bar'
+      - '<gray>hidden when using custom durability.'
+      - '<gray>Does not work when using vanilla durability.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to toggle this value.'
+      - '<yellow>» Right-Click to choose probability to have this option.'
+  max_health:
+    name: '<green>Max Health'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>The amount of health your item gives to the holder.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  movement_speed:
+    name: '<green>Movement Speed'
+    lore:
+      - '<gray>Vanilla Attribute'
+      - '<blue>Vanilla Attribute'
+      - '<gray>Increases the player walk speed. Default MC'
+      - '<gray>is 0.1'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  armor:
+    name: '<green>Armor'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>The armor given to the holder.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  armor_toughness:
+    name: '<green>Armor Toughness'
+    lore:
+      - '<blue>Vanilla Attribute'
+      - '<gray>Armor toughness reduces damage taken.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  max_mana:
+    name: '<green>Max Mana'
+    lore:
+      - '<gray>Adds mana to your max mana bar.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  health_regeneration:
+    name: '<green>Health Regeneration'
+    lore:
+      - '<gray>Amount of health points regenerated every second.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  mana_regeneration:
+    name: '<green>Mana Regeneration'
+    lore:
+      - '<gray>Amount of mana points regenerated every second.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  stamina_regeneration:
+    name: '<green>Stamina Regeneration'
+    lore:
+      - '<gray>Amount of stamina points regenerated every second.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  max_health_regeneration:
+    name: '<green>Max Health Regeneration'
+    lore:
+      - '<gray>Percentage of max health regenerated every second.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  max_mana_regeneration:
+    name: '<green>Max Mana Regeneration'
+    lore:
+      - '<gray>Percentage of max mana regenerated every second.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  max_stamina_regeneration:
+    name: '<green>Max Stamina Regeneration'
+    lore:
+      - '<gray>Percentage of max stamina regenerated every second.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  max_stamina:
+    name: '<green>Max Stamina'
+    lore:
+      - '<gray>Additional max stamina.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  max_stellium:
+    name: '<green>Max Stellium'
+    lore:
+      - '<gray>Additional max stellium.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  additional_experience:
+    name: '<green>Additional Experience'
+    lore:
+      - '<gray>Additional MMOCore main class experience in %.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'

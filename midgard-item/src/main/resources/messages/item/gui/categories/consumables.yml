@@ -1,0 +1,88 @@
+stats:
+  item_cooldown:
+    name: '<green>Item Cooldown'
+    lore:
+      - '<gray>This cooldown applies for consumables'
+      - '<gray>as well as for item commands.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  cooldown_reference:
+    name: '<green>Cooldown Reference'
+    lore:
+      - '<gray>Two items with the same cooldown reference'
+      - '<gray>will share their cooldowns. This is useful'
+      - '<gray>for health or mana potions for instance.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  success_rate:
+    name: '<green>Success Rate'
+    lore:
+      - '<gray>The chance of your gem/skin to successfully apply'
+      - '<gray>onto an item. This value is 100%'
+      - '<gray>by default. If not successfully applied,'
+      - '<gray>the gem/skin will be lost.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  repair_reference:
+    name: '<green>Repair Reference'
+    lore:
+      - '<gray>A repair consumable can only be used on'
+      - '<gray>an item with the same repair reference.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  eating_sound:
+    name: '<green>Eating Sound'
+    lore:
+      - '<gray>Sound played when eating this item.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  eating_duration:
+    name: '<green>Eating Duration'
+    lore:
+      - '<gray>Duration it takes to eat this item.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Left-Click to change this value.'
+      - '<yellow>» Right-Click to remove this value.'
+  permanent_effects:
+    name: '<green>Permanent Effects'
+    lore:
+      - '<gray>The potion effects your'
+      - '<gray>item grants to the holder.'
+      - '<gray>Current Value: <green>%value%'
+      - '<yellow>» Click to add an effect.'
+      - '<yellow>» Right-Click to remove last effect.'
+  item_abilities:
+    name: '<green>Item Abilities'
+    lore:
+      - '<gray>The abilities your item has.'
+      - '<gray>Current Value: <blue>%value%'
+      - ''
+      - '<yellow>» Click to access Ability Edition menu.'
+      - '<yellow>» Right-Click to remove all abilities.'
+  gem_sockets:
+    name: '<green>Gem Sockets'
+    lore:
+      - '<gray>Make your item cast incredible abilities'
+      - '<gray>to kill monsters or buff yourself.'
+      - '<gray>Current Abilities: <blue>%value%'
+      - ''
+      - '<yellow>» Click to edit item abilities.'
+  commands:
+    name: '<green>Commands'
+    lore:
+      - '<gray>The commands your item'
+      - '<gray>performs when right clicked.'
+      - '<gray>Current Commands: <blue>%value%'
+      - ''
+      - '<yellow>» Click to edit item commands.'

@@ -1,0 +1,31 @@
+name: "Circuit of Flame"
+nodes:
+  root:
+    slot: 22
+    type: PASSIVE
+    parents: []
+  
+  damage_path_start:
+    slot: 13
+    type: SOCKET
+    parents: [22]
+  
+  damage_path_end:
+    slot: 4
+    type: MUTATION
+    parents: [13]
+    
+  utility_left:
+    slot: 21
+    type: PASSIVE
+    parents: [22]
+    
+  utility_right:
+    slot: 23
+    type: PASSIVE
+    parents: [22]
+    
+  utility_socket:
+    slot: 31
+    type: SOCKET
+    parents: [21, 23] # Requires both passives to unlock this socket
