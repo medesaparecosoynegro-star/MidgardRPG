@@ -37,6 +37,7 @@ public class MatrixTemplateManager {
     }
 
     public void loadTemplates() {
+        createDefaultTemplates();
         templates.clear();
         File[] files = templateFolder.listFiles((dir, name) -> name.endsWith(".yml"));
         if (files == null) return;
@@ -99,5 +100,30 @@ public class MatrixTemplateManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void createDefaultTemplates() {
+        if (templateFolder.listFiles().length > 0) return;
+
+        // Create a default Pyromancy Template
+        MatrixTemplate pyro = new MatrixTemplate("pyromancy", "Pyromancy Tree");
+        
+        // Root
+        pyro.addNode(0, new MatrixNode(NodeType.ROOT, 4, null, null, "<red>Pyromancy Base", "FIRE_CHARGE", 0));
+        
+        // Level 1 Branches (Slots 11, 13, 15 for example in a 5x9 or similar grid? Depends on GUI layout)
+        // Assuming Standard Chest GUI (9 cols). 
+        // Root at Row 0, Col 4 (Index 4).
+        // Let's go down. Row 1: Index 13 (Center), 12 (Left), 14 (Right)
+        
+        // Example: Split into Damage vs Range
+        // Left (Damage)
+        pyro.addNode(13, new MatrixNode(NodeType.PASSIVE, 13, List.of(4), null, "<gold>Ignite", "BLAZE_POWDER", 0));
+        
+        // Mutation (Explosive vs DoT)
+        pyro.addNode(22, new MatrixNode(NodeType.MUTATION, 22, List.of(13), "MM_Skill_Explosion", "<dark_red>Explosion", "TNT", 0));
+        
+        saveTemplate(pyro);
+        module.getPlugin().getLogger().info("Created default template: pyromancy.yml");
     }
 }
